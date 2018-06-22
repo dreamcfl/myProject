@@ -1,0 +1,102 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,input{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6,strong{font-weight:100;}
+body{ font-family:"微软雅黑";background: #f0f3ef;}
+input,a{outline:none;}
+$twidth:1310px;
+$font:12px;
+header{
+    height: 34px;background: #e3e4e5;
+    #header_box{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        height: 34px;
+        margin: 0 auto;
+        color: #99a2b7;
+        width: $twidth;
+        font-size:$font ;
+        position: relative;
+    }
+    #logo{
+            width: 170px;
+            height: 170px;
+            background: url(../imgs/sprite.head.png) left top;position: absolute;
+            left: 0;top: 0;
+        }
+    #header_left{
+        position: relative;
+        width:55px;
+        margin-left: 225px;
+        
+        img{display: inline-block;margin-right: 6px;}
+        
+    
+       span{position: absolute;left: 20px;top: 5px;width: 60px;}
+    }
+    ul{
+        display: flex;
+        width: 795px;
+        li{
+            margin: 0 12px;
+            a{
+                color:#999999;
+            }
+            .red{
+                color: red;
+            }
+            a:hover{color: red;}
+        }
+    }
+}
+#content{
+    min-height: 600px;
+}
+footer{
+    height: 634px;
+    margin: 0 auto;
+    #footer_top{
+        height: 125px;
+        border-bottom: 1px solid #dedede;
+        ul{
+            width: $twidth;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            margin: 0 auto;
+            li{
+                width: 262px;height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h5{
+                    width: 46px;height: 46px;background: url(../imgs/sprite.footer.png) bottom left;
+                }
+                p{
+                    width: 240px;font-size: 22px;font-weight: 800;margin-left: 10px;
+                }
+                &:nth-of-type(2) h5{
+                    background-position:-40px -190px;
+                }
+                &:nth-of-type(3) h5{
+                    background-position:-80px -190px;
+                }
+                &:nth-of-type(4) h5{
+                    background-position:-121px -190px;
+                }
+            }
+        }
+    }
+    #footer_bottom{
+        width: $twidth;
+        margin: 0 auto;
+        #footer_box{
+            height: 220px;
+             border-bottom: 1px solid #dedede;
+             
+        }
+    }
+}
