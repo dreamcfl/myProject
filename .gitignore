@@ -2,3 +2,5 @@
 node_modules/**
 package.json
 gulpfile.js
+header.html
+footer.html
