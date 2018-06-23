@@ -30,10 +30,10 @@ header{
         color: #99a2b7;
         width: $twidth;
         font-size:$font ;
-        position: relative;
+        position: relative;z-index: 3;
     }
     #logo{
-            width: 170px;
+            width: 190px;
             height: 170px;
             background: url(../imgs/sprite.head.png) left top;position: absolute;
             left: 0;top: 0;
@@ -113,7 +113,7 @@ header{
     }
     ul{
         display: flex;
-        width: 795px;
+        width: 760px;
         line-height: 34px;
         li{
             margin: 0 6px;
@@ -205,7 +205,7 @@ header{
             width: 1188px;height: 180px;
             background:#fff;
             position: absolute;
-            top: 34px;left: -993px;
+            top: 34px;left: -1028px;
             
             display: none;
             #header_4box{
