@@ -6,8 +6,19 @@ a{text-decoration:none; color:#333;}
 h1,h2,h3,h4,h5,h6,strong{font-weight:100;}
 body{ font-family:"微软雅黑";background: #f0f3ef;}
 input,a{outline:none;}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../jsp/fonts/iconfont.eot');
+  src: url('../jsp/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../jsp/fonts/iconfont.woff') format('woff'),
+  url('../jsp/fonts/iconfont.ttf') format('truetype'),
+  url('../jsp/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+
 $twidth:1192px;
 $font:12px;
+//header
 header{
     height: 34px;background: #e3e4e5;
     #header_box{
@@ -31,17 +42,84 @@ header{
         position: relative;
         width:55px;
         margin-left: 18px;
-        
-        img{display: inline-block;margin-right: 6px;}
-        
-    
-       span{position: absolute;left: 20px;top: 5px;width: 60px;}
+        height: 34px;
+        line-height: 34px;
+        padding-right:10px; 
+        &:hover{
+            background: #fff;
+        }
+       span{
+           margin-left: 10px;
+           color: red;
+           font-weight: 800;
+            font-family:"iconfont" !important;
+       }
+       #header_left_box{
+           width: 320px;
+           height: 330px;
+           position: absolute;left: 0;top: 34px;
+           background:#fff;
+           display: none;
+           #map{
+               height: 216px;
+               width: 320px;
+               display: flex;
+               flex-wrap: wrap;
+               border-bottom:1px solid #f1f1f1;
+               margin-bottom: 10px;
+               
+               li{
+                   margin-left: 10px;
+                   width: 54px;
+                   height: 28px;
+                   &:nth-of-type(1) a{
+                       color: red;
+                   }
+                   a:hover{
+                       color: red;
+                   }
+               }
+           }
+           h4{
+               color: #000;
+               margin-left: 10px;
+           }
+           .wuse{
+               width: 320px;
+               display: flex;
+               flex-wrap: wrap;
+               li a{
+                   color: #000;
+               }
+           }
+           .wuse li a span{
+                width: 17px;height: 14px;
+                display: inline-block;
+                background:url(../imgs/sprite.footer.png)  -108px -154px;
+                margin-right: 10px;
+                
+            }
+            .wuse li:nth-of-type(2) a span{
+                background-position: -128px -154px;
+            }
+            .wuse li:nth-of-type(3) a span{
+                background-position: -148px -154px;
+            }
+            .wuse li:nth-of-type(4) a span{
+                background-position: -108px -172px;
+            }
+           
+       }
     }
     ul{
         display: flex;
         width: 795px;
+        line-height: 34px;
         li{
-            margin: 0 12px;
+            margin: 0 6px;
+            padding: 0 6px;
+            position: relative;
+            height: 34px;line-height: 34px;
             a{
                 color:#999999;
             }
@@ -49,12 +127,147 @@ header{
                 color: red;
             }
             a:hover{color: red;}
+            
         }
+        #header_list1:hover{
+            background: #fff;
+            height: 34px;line-height: 34px;
+        }
+        #header_1{
+            width: 282px;height: 162px;
+            background:#fff;
+            position: absolute;
+            top: 34px;left: 0;
+            display: none;
+            ol{
+                display: flex;
+               flex-wrap: wrap;
+               li{
+                   width: 105px;
+                   height: 14px;
+                   margin-top: 10px;
+               }
+            }
+            ol:nth-of-type(2){
+                margin-top: 20px;
+                border-top: 1px solid #f1f1f1;
+            }
+            
+        }
+        #header_2{
+            width: 166px;height: 66px;
+            background:#fff;
+            position: absolute;
+            top: 34px;left: 0;
+            display: none;
+            ol{
+                display: flex;
+               flex-wrap: wrap;
+               width: 166px;
+               li{
+                   
+                   height: 14px;
+                   margin-top: 10px;
+               }
+            }
+        }
+        #header_list2:hover{
+            background: #fff;
+            height: 34px;line-height: 34px;
+        } 
+        #header_3{
+            width: 170px;height: 248px;
+            background:#fff;
+            position: absolute;
+            top: 34px;left: -95px;
+            display: none;
+            h4{
+                font-weight: 800;color: #000;margin-left: 10px;
+                margin-top: 10px;
+            }
+            ol{
+                margin-top: -20px;
+                display: flex;
+               flex-wrap: wrap;
+               width: 170px;
+               li{
+                   
+                   height: 14px;
+                   margin-top: 10px;
+               }
+            }
+        }
+        #header_list3:hover{
+            background: #fff;
+            height: 34px;line-height: 34px;
+        } 
+         #header_4{
+            width: 1188px;height: 180px;
+            background:#fff;
+            position: absolute;
+            top: 34px;left: -993px;
+            
+            display: none;
+            #header_4box{
+                display: flex;
+            }
+            #header_4a{
+                 border-right: 1px solid #F1F1F1;
+                 margin-left: 22px;
+            }
+            h4{
+                font-weight: 800;color: #000;margin-left: 10px;
+                margin-top: 10px;
+            }
+            ol{
+                margin-top: -20px;
+                display: flex;
+               flex-wrap: wrap;
+               width: 274px;
+               li{
+                   
+                   height: 14px;
+                   margin-top: 10px;
+               }
+            }
+        }
+        #header_list4:hover{
+            background: #fff;
+            height: 34px;line-height: 34px;
+        } 
+          #header_5{
+            width: 192px;height: 306px;
+            background:#fff;
+            position: absolute;
+            top: 34px;left: -120px;
+            display: none;
+            ol{
+                
+                display: flex;
+               flex-wrap: wrap;
+               width: 192px;
+               li{
+                   display: flex;
+                   height: 73px;
+                   margin-top: 20px;
+                   img{
+                    width: 73px;height: 73px;
+                    }
+                    strong{
+                        margin-top: -10px;
+                        margin-left: 10px;font-weight: 800;color: #000;
+                        p{color: red;line-height: 16px;}
+                    }
+               }
+            }
+        }            
     }
 }
+//content
 #content{
     min-height: 800px;
 }
+//footer
 footer{
     height: 634px;
     margin: 0 auto;
