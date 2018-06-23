@@ -147,7 +147,7 @@ color: #989898;
             width: 190px;
             height: 480px;
             background: #fff;
-           
+           position: relative;z-index: 2;
             ul{ 
                
                 li{ 
@@ -155,29 +155,169 @@ color: #989898;
                     height: 28px;
                     line-height: 28px;
                     font-size: $fonts;
-                    &:hover{
+                   &:hover{
                     background: #ddd;
                    
+                   }
+                    .main1_banner_wrap1{
+                        display: none;
+                       position: absolute;
+                       width: 1001px;
+                       height: 480px;
+                       font-size: $fonts;
+                       top: 0;left:190px ;background:#fff;
+                       border: 1px solid #ddd;
+                       ul,ol{
+                           display: flex;
+                           flex-wrap: wrap;
+                       }
+                       ol{
+                           margin:10px;
+                           li{margin: 0 8px;
+                           height: 23px;
+                           padding: 0 9px;
+                           line-height: 23px;text-align: center;
+                           background: #333;
+                           
+                           a{
+                               color: #fff;
+                               
+                           }
+                           
+                           }
+                          
+                       }
+                     .main1_ul_list{
+                         
+                               display: flex;
+                               h5{
+                                   width: 90px;
+                                   text-align: right;
+                                   margin-right: 10px;
+                               }
+                               ul{
+                                   width: 680px;
+                                   
+                                   li{
+                                      margin-right:10px; 
+                                      
+                                      &:hover{
+                    background: #fff;
+                    } 
+                                   }
+                               }
+                           }
+                      
+                     
                 }
                 a:hover{
                     color: $corlors;
-                }
+                  }
                 }
                 
             }
         }
         #main1_scrollbanner{
             width: 590px;
-            height: 480px;
-            background: red;
+            height: 470px;
+            padding-top: 10px;
+            position: relative; 
+            overflow: hidden;
+            #main1_scrollbanner_warp{
+            display: flex;
+            
+            position: absolute;
+            }
         }
         #main1_picbanner{
             width: 190px;
-            background: red;
+           
+            img{
+                margin-bottom: 15px;
+            }
         }
         #main1_login{
+            font-size: $fonts;
             width: 190px;
-            background: red;
+            background:#fff;
+            #main1_login_top{
+                text-align: center;
+                #loginimg{
+                    width: 56px;height: 56px;border-radius: 50%;
+                    position: relative;margin: 0 auto;top: -5px;
+                    box-shadow: 2px 2px 5px 5px #ddd;
+                    img{
+                        width: 56px;height: 56px;border-radius: 50%;
+                    }
+                }
+                p{
+                    margin: 4px 0;
+                    display: flex;justify-content: center;
+                }
+                
+                p a{
+                    margin:6px 6px ;
+                    width: 60px;height: 24px;border-radius: 15px;display: block;border: 1px solid #ddd;text-align: center;
+                    line-height: 24px;
+                    &:nth-of-type(1){
+                        color: red;
+                    }
+                    &:hover{
+                        color: #fff;
+                        background: $corlors;
+                    }
+                    &:nth-of-type(2){
+                        color:#c4b87e;
+                        background: #363634;
+                    }
+                    &:hover{
+                        color: #fff;
+                        background: $corlors;
+                    }
+                }
+                a{
+                    margin: 0 2px;
+                }
+                a:hover{
+                    color: $corlors;
+                }
+            }
+           #main1_login_center{
+               width: 148px;
+               margin: 0 auto;
+               border-top: 1px solid #cecece;
+               height: 120px;
+               border-bottom: 1px solid #cecece;
+               p{
+                   margin-top: 6px;
+                   a{
+                       margin:0 4px ;
+                       &:hover{
+                           color: $corlors;
+                       }
+                   &:nth-of-type(3){
+                       margin-left: 40px;
+                   }
+                   
+                   
+               }
+              }
+               ul{
+                   width: 148px;
+                   margin-top: 8px;
+                   li{
+                       margin: 4px 0;
+                       a{
+                           width: 148px;
+                           
+                       }
+                   }
+               }
+             
+               #login_hide{
+                   display: none;
+               }
+           }
         }
     }
 }

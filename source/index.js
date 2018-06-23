@@ -29,4 +29,67 @@ $(function(){
 	},function(){
 		$("#header_5").hide();
 	})
-})
+	$("#main1_banner #list_1").hover(function(){
+		$(".main1_list1").show();
+	},function(){
+		$(".main1_list1").hide();
+		
+	})
+	$("#main1_banner #list_2").hover(function(){
+		$(".main1_list2").show();
+	},function(){
+		$(".main1_list2").hide();
+		
+	});
+	
+	var num=0;
+	var timer=null;
+	
+	timer = setInterval(function(){
+		
+		foo();
+			
+		},5000)
+
+function foo(){
+			num++;
+			
+		var left1=num*($("#main1_scrollbanner_warp img").width());
+		if(num>=4){
+			$("#main1_scrollbanner_warp")
+			.animate({"left":-left1},800,function(){
+				$("#main1_scrollbanner_warp").css("left",0)
+			})
+				num=0;
+				
+			}else{
+			$("#main1_scrollbanner_warp")
+			.animate({"left":-left1},800)
+			}
+		}
+    $("#main1_scrollbanner_warp img").mouseover(function(){
+			clearInterval(timer);
+		})
+		$("#main1_scrollbanner_warp img").mouseout(function(){
+			timer = setInterval(function(){
+		
+		foo();
+			
+		},5000)
+		})
+
+   $("#new_2").hover(function(){
+           $("#login_hide").show();
+           $("#login_show").hide();
+          
+           
+   })
+$("#new_1").hover(function(){
+           $("#login_show").show();
+           $("#login_hide").hide();
+           
+   })
+});
+	
+	
+
