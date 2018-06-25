@@ -1,0 +1,249 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,input{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6,strong{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../jsp/fonts/iconfont.eot');
+  src: url('../jsp/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../jsp/fonts/iconfont.woff') format('woff'),
+  url('../jsp/fonts/iconfont.ttf') format('truetype'),
+  url('../jsp/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+
+//登录头部
+
+.login_header_wrap{
+    height: 80px;
+    border-bottom: 3px solid #f2f2f2;
+}
+.login_header{
+    height: 80px;
+    width: 988px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .login_header_logo{
+        width: 298px;
+        
+        display: flex;justify-content: center;
+        align-items: center; 
+        .login_logo{
+        width: 124px;
+        height: 40px;
+        background: url(../imgs/sprite.head.png) -195px 0 ;
+        margin-right: 10px;
+       
+    }
+    h2{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    }
+    .wenjuan{
+        font-size: 12px;
+        margin-top: 50px;
+        a{
+            color:#e4393c;
+            margin-left: 4px;
+        }
+    }
+   
+}
+.register_wenjuan{
+    width: 32px;
+    height: 136px;
+    background: #bbbbbb;
+    font-size: 12px;
+   &:hover{
+                 background: #e2231a;
+             }
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    p{
+        color: #fff;
+        width: 15px;
+        margin: 0 auto;margin-top: 30px;
+        
+    }
+}
+
+
+//注册内容
+.register_content{
+    height: 675px;
+    .register_content_box{
+        width: 425px;
+        height: 675px;
+        margin: 0 auto;
+        font-size: 12px;
+        .rcb_top{
+            display: flex;
+            align-items: center;
+            justify-content: space-around; 
+            color: #cccccc;
+            margin-top: 50px;
+            dl{
+               
+                 margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                dt{
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    line-height: 22px;
+                    text-align: center;
+                   border: 1px solid #999;
+                } 
+                &:nth-of-type(1) dt{
+                        background: #33bb44;
+                        color: #fff;
+                    }
+                 &:nth-of-type(1) dd{
+                        color: #33bb44;
+                    }
+                dd{
+                    margin-top: 10px;
+                    color: #999;
+                }
+            }
+        }
+       
+             #hm_test{
+               position: relative;
+            display: flex;
+            width: 400px;
+            height: 50px;
+            border: 1px solid #ddd;
+            margin:50px  auto 0;
+            #hm_txt1{
+                position: absolute;
+                height: 20px;
+                bottom: -25px;
+              text-align: center;
+                width: 100%;
+               color: orange;
+            }
+            &:hover{
+                 border: 1px solid #000;
+            }
+            &:hover span{
+                 border-right: 1px solid #000;
+            }
+            span{
+                display: block;
+                text-align: center;
+                line-height: 50px;
+                height: 50px;
+                width: 108px;
+                border-right: 1px solid #ddd;
+            }
+            input{
+                border: none;
+                width: 288px;
+                text-indent: 10px;
+                font-size: 14px;
+            }
+        }
+            .rcb_center1{
+                width: 400px;
+                margin: 0 auto;
+            }
+            
+       
+       
+        
+        .rcb_center{
+             width: 400px;
+            height: 50px;
+            border: 1px solid #ddd;
+            margin:30px  auto 0;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            input{
+                  width: 400px;
+                  height: 50px;
+                  text-indent: 10px;
+            }
+            &:hover{
+                 border: 1px solid #000;
+            }
+        }
+        #btn_xyb{
+            width: 400px;
+            height: 50px;
+            border: 1px solid #ddd;
+            margin:50px  auto 0;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            color: #fff;
+            background:#e2231a; 
+            &:hover{
+                 opacity: .8;
+            }
+        }
+        .rcb_bottom{
+            margin-top:30px ;
+            display: flex;
+            justify-content: space-between;
+            p{
+                margin:0 12px;
+                a:hover{
+                    color: #e2231a;
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//登录footer
+.login_footer{
+    height: 142px;
+    width: 998px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    ul{
+        margin: 10px 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        li{
+            padding: 12px;
+            a:hover{
+                color: #d54851;
+            }
+        }
+    }
+}
+
