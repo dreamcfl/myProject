@@ -263,6 +263,127 @@ header{
         }            
     }
 }
+//侧边显示
+html,body{
+    height: 100%;
+}
+.global_toolbar{
+    position: fixed;
+    width: 30px;
+    border-right: 5px solid #7a6e6e;
+    right: 0;
+    top: 0;
+    height: 100%;
+    .scroll_fan{
+        font-size: 18px;
+        height: 35px;
+        width: 30px;
+        position: absolute;
+        bottom:2px;
+        background:#7a6e6e ;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+         strong{
+                display:none;
+                height: 35px;
+                background: #c81623;
+                font-size: 12px;
+                padding: 0 10px;
+                position: absolute;
+                top:0;
+                left:  -65px;
+            }
+        &:hover{
+            background: #c81623;
+        }
+    }
+    .scroll_ding{
+        font-size: 18px;
+        height: 35px;
+        width: 30px;
+        position: absolute;
+        bottom:39px;
+        background:#7a6e6e;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+         strong{
+                display:none;
+                height: 35px;
+                background: #c81623;
+                font-size: 12px;
+                padding: 0 10px;
+                position: absolute;
+                top:0;
+                left:  -65px;
+            }
+        &:hover{
+            background: #c81623;
+        }
+    }
+    .scroll_ce{
+        height: 180px;
+        width: 30px;
+        bottom: 50%;
+        position: absolute;
+        background: #fff;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'iconfont';
+        div{
+            cursor: pointer;
+            line-height: 35px;
+            margin-top: 2px;
+            height: 35px;
+            position: relative;
+            background: #7a6e6e;
+            &:hover{
+                background: #c81623;
+            }
+            #che_num{
+                width: 12px;
+                height: 12px;
+                display: block;
+                font-size:12px ;
+                background: #d54851;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 12px;
+                color: #fff;
+                top: 0;
+                right: 0;
+                position: absolute;
+            }
+            strong{
+                display:none;
+                height: 35px;
+                background: #c81623;
+                font-size: 12px;
+                padding: 0 10px;
+                position: absolute;
+                top:0;
+                left:  -65px;
+            }
+            .stro_che{
+                left: -65px;
+                padding: 0 15px;
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
 //content
 #content{
    
@@ -271,7 +392,7 @@ header{
 //footer
 footer{
     height: 634px;
-    margin: 0 auto;
+    margin: 30px auto 0;
     #footer_top{
         height: 125px;
         border-bottom: 1px solid #dedede;

@@ -1,35 +1,8 @@
 $(function(){
-	//头部header滑动出现效果
-	$("#header_left").hover(function(){
-		$("#header_left_box").show();
-	},function(){
-		$("#header_left_box").hide();
-	})
-	$("#header_list1").hover(function(){
-		$("#header_1").show();
-	},function(){
-		$("#header_1").hide();
-	})
-	$("#header_list2").hover(function(){
-		$("#header_2").show();
-	},function(){
-		$("#header_2").hide();
-	})
-	$("#header_list3").hover(function(){
-		$("#header_3").show();
-	},function(){
-		$("#header_3").hide();
-	})
-	$("#header_list4").hover(function(){
-		$("#header_4").show();
-	},function(){
-		$("#header_4").hide();
-	})
-	$("#header_list5").hover(function(){
-		$("#header_5").show();
-	},function(){
-		$("#header_5").hide();
-	})
+	
+	
+	
+	//右内容更换出现效果
 	$("#main1_banner #list_1").hover(function(){
 		$(".main1_list1").show();
 	},function(){
@@ -75,10 +48,10 @@ function foo(){
 		}
     $("#main1_scrollbanner").mouseover(function(){
 			clearInterval(timer);
-			$(".btn1").show();
+			$(".btn").show();
 		})
 		$("#main1_scrollbanner").mouseout(function(){
-			$(".btn1").hide();
+			$(".btn").hide();
 			timer = setInterval(function(){
 		
 		foo();
@@ -263,11 +236,11 @@ function foo2(){
 			
 		},3000)
 		})
-		$(".pre").click(function(){
+		$(".pre1").click(function(){
 			num2-=1;
 			foo2();
 		})
-		$(".next").click(function(){
+		$(".next1").click(function(){
 			foo2();
 		})
 			
@@ -324,40 +297,116 @@ function foo3(){
 		}
     $(".mcss2").mouseover(function(){
 			clearInterval(timer3);
-			$(".btn1").show();
+			$(".btn2").show();
 		})
 		$(".mcss2").mouseout(function(){
-			$(".btn1").hide();
+			$(".btn2").hide();
 			timer3 = setInterval(function(){
 		
 		foo3();
 			
 		},4000)
 		})
-		$(".pre").click(function(){
+		$(".pre2").click(function(){
 			num3-=1;
 			foo3();
 		})
-		$(".next").click(function(){
+		$(".next2").click(function(){
 			foo3();
+		});
+		})();
+			
+			
+		
+		//第五个轮播	
+(function(){
+    var num4=0;
+	var timer4=null;
+	
+	 timer4 = setInterval(function(){
+		foo4();
+			
+		},4500)
+
+function foo4(){
+			num4++;
+			
+		var left4=num4*($(".main_scroll_wrap ul").width());
+		
+		if(num4>=4){
+			
+			$(".main_scroll_wrap")
+			.animate({"left":-left4},800,function(){
+				$(".main_scroll_wrap").css("left",0)
+			})
+				num4=0;
+			}else{
+			$(".main_scroll_wrap")
+			.stop().animate({"left":-left4},800)
+			}
+			
+			$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select")
+			.siblings().removeClass("select");
+
+			
+			
+		}
+    $(".main5_scroll").mouseover(function(){
+			clearInterval(timer4);
+			
 		})
+		$(".main5_scroll").mouseout(function(){
 			
+			timer4 = setInterval(function(){
+		
+		foo4();
 			
+		},4500)
+		})
+		
 			
-		})()
+		})();
+		
+		//生成商品列表
+		(function(){
+			var main6content =document.getElementById("main6_content");
+			var strcon="";
+			for(var con=0;con<100;con++){
+				strcon+=`
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont1.jpg"/></dt>
+						<dd>
+							<p>全自动雨伞 男士商务折叠伞大号双人三折成人男女自开自收</p>
+							<span>
+								￥18.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="main6_content_box">
+					<img src="imgs/cont.jpg"/>
+				</div>
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont2.jpg"/></dt>
+						<dd>
+							<p>泰迪金毛宠物湿粮美毛健肤狗零食375g</p>
+							<span>
+								￥1188.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+				`;
+			
+			}
+			main6content.innerHTML=strcon;
+		})();
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+	
 		
 		
 		

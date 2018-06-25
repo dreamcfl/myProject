@@ -2,14 +2,22 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
 		<title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
 		<link rel="stylesheet" type="text/css" href="cssmin/index.css"/>
 		<link rel="stylesheet" type="text/css" href="cssmin/main.css"/>
 		<link rel="icon" type="image/x-icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico"/>
 		<script src="jsp/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
+	
 		<!--头部-->
 	<header>
 		<div id="header_box">
@@ -243,6 +251,79 @@
 		</ul>
 		</div>
 	</header>
+		<!--侧边显示-->
+		<div class="global_toolbar">
+			<div class="scroll_ce">
+				<div class="scroll_ce1">
+					<strong>京东会员</strong>
+					&#xe6a3;
+				</div>
+				<div class="scroll_ce2">
+					<strong class="stro_che">购物车</strong>
+					&#xe887;<span id="che_num">
+						0
+					</span>
+				</div>
+				<div class="scroll_ce3">
+					<strong>我的关注</strong>
+					&#xe615;
+				</div>
+				<div class="scroll_ce4">
+					<strong>我的消息</strong>
+					&#xe8ab;
+				</div>
+				<div class="scroll_ce5">
+					<strong>我的咨询</strong>
+					&#xe6bd;
+				</div>
+			</div>
+			<div class="scroll_ding">
+				<strong>返回顶部</strong>
+				︿
+			</div>
+			<div class="scroll_fan">
+				<strong>我的反馈</strong>
+				☜
+			</div>
+		</div>
+		<!--头部显示-->
+		<div class="top_xian">
+			<a href="index.html"><div class="logo1">
+				
+			</div></a>
+			<div id="search1">
+							<input type="text" name="search_text1" id="seach_text1" placeholder="西装" />
+							<span id="">
+								&#xe63a;
+							</span>
+							<input type="button" name="search_btn1" id="search_btn1" value="&#xe741;" />
+						</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<!--内容-->
 	<div id="content">
 		<div id="main1">
@@ -463,8 +544,8 @@
 						<a href=""><img src="imgs/banner4.jpg"/></a>
 						<a href=""><img src="imgs/bannder1.jpg"/></a>
 					</div>
-					<div class="btn1 pre">&lt;</div>
-			        <div class="btn1 next">&gt;</div>
+					<div class="btn pre">&lt;</div>
+			        <div class="btn next">&gt;</div>
 
 			<div class="main1_scrollbanner_nav">
 				<ul>
@@ -720,8 +801,8 @@
 								<p><a href="">对于很多喜欢简单款鞋子的男士来说，一款这样的低帮简约工装鞋可能是一个不错的选择，低帮穿搭舒适又有型，简约风设计搭配衣服也是很容易的，并且这样一款</a></p>
 							</li>
 						</ul>
-						<div class="btn1 pre">&lt;</div>
-			        <div class="btn1 next">&gt;</div>
+						<div class="btn1 pre1">&lt;</div>
+			        <div class="btn1 next1">&gt;</div>
 
 			<div class="main1_center2_scroll_nav">
 				<dl>
@@ -864,8 +945,8 @@
 								<p><a href="">对于很多喜欢简单款鞋子的男士来说，一款这样的低帮简约工装鞋可能是一个不错的选择，低帮穿搭舒适又有型，简约风设计搭配衣服也是很容易的，并且这样一款</a></p>
 							</li>
 						</ul>
-						<div class="btn2 pre">&lt;</div>
-			        <div class="btn2 next">&gt;</div>
+						<div class="btn2 pre2">&lt;</div>
+			        <div class="btn2 next2">&gt;</div>
 
 			<div class="main1_center2_scroll_nav1">
 				<dl>
@@ -886,20 +967,30 @@
 					</div>
                             <div class="main1_center_pic">
                             	<a href=""><dl>
-                            		<dt></dt>
-                            		<dd></dd>
+                            		<dt><img src="imgs/Zxc.jpg"/></dt>
+                            		<dd>
+                            			<h4>范斯男士时尚板鞋</h4>
+                            			<p>Vans推出的此款时尚板鞋，</p>
+                            		</dd>
                             	</dl></a>
                             	<a href=""><dl>
-                            		<dt></dt>
-                            		<dd></dd>
+                            		<dt><img src="imgs/zxc1.jpg"/></dt>
+                            		<dd><h4>华为 自拍双摄手机</h4>
+                            			<p>一款以黑色为主色调的手机</p>
+                            		</dd>
                             	</dl></a>
                             	<a href=""><dl>
-                            		<dt></dt>
-                            		<dd></dd>
+                            		<dt><img src="imgs/zxc.png"/></dt>
+                            		<dd><h4>铁三角梧桐木制耳机</h4>
+                            			<p>铁三角匠心之作，创意</p>
+                            		</dd>
                             	</dl></a>
                             	<a href=""><dl>
-                            		<dt></dt>
-                            		<dd></dd>
+                            		<dt><img src="imgs/zxc.png"/></dt>
+                            		<dd><h4>
+美的 自清洁变频空调</h4>
+                            			<p>带有自清洁功能的一款空调</p>
+                            		</dd>
                             	</dl></a>
                             </div>
 
@@ -913,30 +1004,710 @@
 						<p><a href="">你想逛的都在这里</a></p>
 					</div>
                           <div class="main1_right_pic1">
-                          	<a href=""></a>
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
                           </div>
                           <ul>
-                          	<li><a href=""></a></li>
-                          	<li><a href=""></a></li>
-                          	<li><a href=""></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
                           </ul>
 				</div>
 			</div>
 		</div>
 		<div id="main2">
+			<h3>—— 时尚达人  ——</h3>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+						
+					</div>
+					
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/>
+					</div></a>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<ol>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>凤凰Phoenix城市车</p>
+						<span>¥528.00</span>
+						</a>
+						</li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>贝玲妃（Benefit） 贝玲</p>
+						<span>¥128.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>海洋之星天然海鲜</p>
+						<span>¥234.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>澳洲直邮O新款刺绣</p>
+						<span>¥328.00</span>
+						</a></li>
+						
+					</ol>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">COAC</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">COAC直营店</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					
+						<img src="imgs/li6.jpg"/>
+						<img src="imgs/li7.jpg"/>
+					
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
 			
 		</div>
+		<!--main3 内容3-->
+		
 		<div id="main3">
+			<h3>—— 时尚达人  ——</h3>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+						
+					</div>
+					
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/>
+					</div></a>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<ol>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>凤凰Phoenix城市车</p>
+						<span>¥528.00</span>
+						</a>
+						</li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>贝玲妃（Benefit） 贝玲</p>
+						<span>¥128.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>海洋之星天然海鲜</p>
+						<span>¥234.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>澳洲直邮O新款刺绣</p>
+						<span>¥328.00</span>
+						</a></li>
+						
+					</ol>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">COAC</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">COAC直营店</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					
+						<img src="imgs/li6.jpg"/>
+						<img src="imgs/li7.jpg"/>
+					
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
 			
 		</div>
+		<!--内容4-->
 		<div id="main4">
+			<h3>—— 时尚达人  ——</h3>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+						
+					</div>
+					
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/>
+					</div></a>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					<img src="imgs/li5.jpg"/></a>
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<ol>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>凤凰Phoenix城市车</p>
+						<span>¥528.00</span>
+						</a>
+						</li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>贝玲妃（Benefit） 贝玲</p>
+						<span>¥128.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>海洋之星天然海鲜</p>
+						<span>¥234.00</span>
+						</a></li>
+						<li><a href="">
+							<img src="imgs/che.jpg"/>
+							<p>澳洲直邮O新款刺绣</p>
+						<span>¥328.00</span>
+						</a></li>
+						
+					</ol>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">COAC</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">COAC直营店</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+			</div>
+			<div class="main2_top">
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main1_right_pic1">
+                          	<a href=""><img src="imgs/zxc3.jpg"/></a>
+                          </div>
+                          <ul>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          	<li><a href=""><img src="imgs/zxc2.png"/></a></li>
+                          </ul>
+				</div>
+				<div class="main2_box1">
+					<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+					<div class="main2_box1_a">
+						<a href=""><img src="imgs/li1.jpg"/></a>
+						<a href=""><img src="imgs/li2.jpg"/></a>
+						<a href=""><img src="imgs/li3.png"/></a>
+					</div>
+				</div>
+				<div class="main2_box1">
+					<div class="main2_box1_b">
+						<a href="">
+					
+					
+						<img src="imgs/li6.jpg"/>
+						<img src="imgs/li7.jpg"/>
+					
+					<div class="main2_box1_b1">
+						
+					</div>
+					</div>
+				</div>
+			</div>
 			
 		</div>
 		<div id="main5">
-			
+			<h3>—— 时尚达人  ——</h3>
+			<div class="main5_scroll">
+				<div class="main_scroll_wrap">	
+				
+				<ul>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/></a>
+							
+						
+					</li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+							
+						
+					</a></li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+					</a></li>
+				</ul>
+				<ul>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/></a>
+							
+						
+					</li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+							
+						
+					</a></li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+					</a></li>
+				</ul>
+				<ul>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/></a>
+							
+						
+					</li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+							
+						
+					</a></li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+					</a></li>
+				</ul>
+				<ul>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/></a>
+							
+						
+					</li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+							
+						
+					</a></li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+					</a></li>
+				</ul>
+				<ul>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/></a>
+							
+						
+					</li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+							
+						
+					</a></li>
+					<li>
+						<div class="main1_center2_box1_top">
+						<h2><a href="">户外运动</a></h2>
+						<span id="">
+							<a href=""> > </a>
+						</span>
+						<p><a href="">玩所未玩</a></p>
+					</div>
+						<a href=""><img src="imgs/sc.jpg"/>
+					</a></li>
+				</ul>
+				</div>
+			<div class="main1_scrollbanner_nav3">
+				<ol>
+					<li class="select"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					
+				</ol>
+			   </div>
+			</div>
+					
 		</div>
+		<!--内容6-->
 		<div id="main6">
-			
+			<h3>—— 还没逛够  ——</h3>
+			<div id="main6_content">
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont1.jpg"/></dt>
+						<dd>
+							<p>全自动雨伞 男士商务折叠伞大号双人三折成人男女自开自收</p>
+							<span>
+								￥18.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="main6_content_box">
+					<img src="imgs/cont.jpg"/>
+				</div>
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont2.jpg"/></dt>
+						<dd>
+							<p>泰迪金毛宠物湿粮美毛健肤狗零食375g</p>
+							<span>
+								￥1188.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont3.jpg"/></dt>
+						<dd>
+							<p>花绽小白鞋全羊皮内里OZ3039 蓝色 35</p>
+							<span>
+								￥68.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="main6_content_box">
+					<dl>
+						<dt><img src="imgs/cont4.jpg"/></dt>
+						<dd>
+							<p>腮红唇彩试用装（花漾胭脂4ml+玫瑰胭脂4ml）</p>
+							<span>
+								￥118.00
+							</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!--尾部-->

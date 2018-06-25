@@ -1,37 +1,8 @@
 "use strict";
 
 $(function () {
-	//头部header滑动出现效果
-	$("#header_left").hover(function () {
-		$("#header_left_box").show();
-	}, function () {
-		$("#header_left_box").hide();
-	});
-	$("#header_list1").hover(function () {
-		$("#header_1").show();
-	}, function () {
-		$("#header_1").hide();
-	});
-	$("#header_list2").hover(function () {
-		$("#header_2").show();
-	}, function () {
-		$("#header_2").hide();
-	});
-	$("#header_list3").hover(function () {
-		$("#header_3").show();
-	}, function () {
-		$("#header_3").hide();
-	});
-	$("#header_list4").hover(function () {
-		$("#header_4").show();
-	}, function () {
-		$("#header_4").hide();
-	});
-	$("#header_list5").hover(function () {
-		$("#header_5").show();
-	}, function () {
-		$("#header_5").hide();
-	});
+
+	//右内容更换出现效果
 	$("#main1_banner #list_1").hover(function () {
 		$(".main1_list1").show();
 	}, function () {
@@ -68,10 +39,10 @@ $(function () {
 	}
 	$("#main1_scrollbanner").mouseover(function () {
 		clearInterval(timer);
-		$(".btn1").show();
+		$(".btn").show();
 	});
 	$("#main1_scrollbanner").mouseout(function () {
-		$(".btn1").hide();
+		$(".btn").hide();
 		timer = setInterval(function () {
 
 			foo();
@@ -233,11 +204,11 @@ $(function () {
 				foo2();
 			}, 3000);
 		});
-		$(".pre").click(function () {
+		$(".pre1").click(function () {
 			num2 -= 1;
 			foo2();
 		});
-		$(".next").click(function () {
+		$(".next1").click(function () {
 			foo2();
 		});
 	})();
@@ -283,21 +254,69 @@ $(function () {
 		}
 		$(".mcss2").mouseover(function () {
 			clearInterval(timer3);
-			$(".btn1").show();
+			$(".btn2").show();
 		});
 		$(".mcss2").mouseout(function () {
-			$(".btn1").hide();
+			$(".btn2").hide();
 			timer3 = setInterval(function () {
 
 				foo3();
 			}, 4000);
 		});
-		$(".pre").click(function () {
+		$(".pre2").click(function () {
 			num3 -= 1;
 			foo3();
 		});
-		$(".next").click(function () {
+		$(".next2").click(function () {
 			foo3();
 		});
+	})();
+
+	//第五个轮播	
+	(function () {
+		var num4 = 0;
+		var timer4 = null;
+
+		timer4 = setInterval(function () {
+			foo4();
+		}, 4500);
+
+		function foo4() {
+			num4++;
+
+			var left4 = num4 * $(".main_scroll_wrap ul").width();
+
+			if (num4 >= 4) {
+
+				$(".main_scroll_wrap").animate({ "left": -left4 }, 800, function () {
+					$(".main_scroll_wrap").css("left", 0);
+				});
+				num4 = 0;
+			} else {
+				$(".main_scroll_wrap").stop().animate({ "left": -left4 }, 800);
+			}
+
+			$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select").siblings().removeClass("select");
+		}
+		$(".main5_scroll").mouseover(function () {
+			clearInterval(timer4);
+		});
+		$(".main5_scroll").mouseout(function () {
+
+			timer4 = setInterval(function () {
+
+				foo4();
+			}, 4500);
+		});
+	})();
+
+	//生成商品列表
+	(function () {
+		var main6content = document.getElementById("main6_content");
+		var strcon = "";
+		for (var con = 0; con < 100; con++) {
+			strcon += "\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont1.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u5168\u81EA\u52A8\u96E8\u4F1E \u7537\u58EB\u5546\u52A1\u6298\u53E0\u4F1E\u5927\u53F7\u53CC\u4EBA\u4E09\u6298\u6210\u4EBA\u7537\u5973\u81EA\u5F00\u81EA\u6536</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE518.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<img src=\"imgs/cont.jpg\"/>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont2.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u6CF0\u8FEA\u91D1\u6BDB\u5BA0\u7269\u6E7F\u7CAE\u7F8E\u6BDB\u5065\u80A4\u72D7\u96F6\u98DF375g</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE51188.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl>\n\t\t\t\t</div>\n\t\t\t\t";
+		}
+		main6content.innerHTML = strcon;
 	})();
 });
