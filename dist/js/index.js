@@ -25,17 +25,23 @@ $(function () {
 	function foo() {
 		num++;
 
-		var left1 = num * $("#main1_scrollbanner_warp img").width();
+		var left1 = $("#main1_scrollbanner_warp img").width();
+		if (num == 5) {
 
-		if (num >= 4) {
-			$("#main1_scrollbanner_warp").animate({ "left": -left1 }, 800, function () {
-				$("#main1_scrollbanner_warp").css("left", 0);
-			});
-			num = 0;
-		} else {
-			$("#main1_scrollbanner_warp").stop().animate({ "left": -left1 }, 800);
+			num = 1;
+			$("#main1_scrollbanner_warp").css("left", 0);
 		}
-		$(".main1_scrollbanner_nav li").eq(num).addClass("select").siblings().removeClass("select");
+		if (num == -1) {
+			num = 3;
+			$("#main1_scrollbanner_warp").css("left", -left1 * (num + 1));
+		}
+
+		$("#main1_scrollbanner_warp").stop().animate({ "left": -left1 * num }, 800);
+		if (num == 4) {
+			$(".main1_scrollbanner_nav li").eq(0).addClass("select").siblings().removeClass("select");
+		} else {
+			$(".main1_scrollbanner_nav li").eq(num).addClass("select").siblings().removeClass("select");
+		}
 	}
 	$("#main1_scrollbanner").mouseover(function () {
 		clearInterval(timer);
@@ -49,7 +55,7 @@ $(function () {
 		}, 5000);
 	});
 	$(".pre").click(function () {
-		num -= 1;
+		num -= 2;
 		foo();
 	});
 	$(".next").click(function () {
@@ -180,18 +186,25 @@ $(function () {
 		function foo2() {
 			num2++;
 
-			var left2 = num2 * $(".main1_center2_scroll_box li").width();
+			var left2 = $(".main1_center2_scroll_box li").width();
 
-			if (num2 >= 3) {
-				$(".main1_center2_scroll_box").animate({ "left": -left2 }, 800, function () {
-					$(".main1_center2_scroll_box").css("left", 0);
-				});
-				num2 = 0;
-			} else {
-				$(".main1_center2_scroll_box").stop().animate({ "left": -left2 }, 800);
+			if (num2 == 4) {
+				num2 = 1;
+				$(".main1_center2_scroll_box").css("left", 0);
 			}
 
-			$(".main1_center2_scroll_nav li").eq(num2).addClass("select").siblings().removeClass("select");
+			if (num2 == -1) {
+				num2 = 2;
+				$(".main1_center2_scroll_box").css("left", -left2 * (num2 + 1));
+			}
+
+			$(".main1_center2_scroll_box").stop().animate({ "left": -left2 * num2 }, 800);
+			if (num2 == 3) {
+				$(".main1_center2_scroll_nav li").eq(0).addClass("select").siblings().removeClass("select");
+			} else {
+
+				$(".main1_center2_scroll_nav li").eq(num2).addClass("select").siblings().removeClass("select");
+			}
 		}
 		$(".mcss1").mouseover(function () {
 			clearInterval(timer2);
@@ -205,7 +218,7 @@ $(function () {
 			}, 3000);
 		});
 		$(".pre1").click(function () {
-			num2 -= 1;
+			num2 -= 2;
 			foo2();
 		});
 		$(".next1").click(function () {
@@ -238,19 +251,24 @@ $(function () {
 		function foo3() {
 			num3++;
 
-			var left3 = num3 * $(".main1_center2_scroll_box1 li").width();
+			var left3 = $(".main1_center2_scroll_box1 li").width();
 
-			if (num3 >= 3) {
+			if (num3 == 4) {
+				num3 = 1;
 
-				$(".main1_center2_scroll_box1").animate({ "left": -left3 }, 800, function () {
-					$(".main1_center2_scroll_box1").css("left", 0);
-				});
-				num3 = 0;
-			} else {
-				$(".main1_center2_scroll_box1").stop().animate({ "left": -left3 }, 800);
+				$(".main1_center2_scroll_box1").css("left", 0);
+			}if (num3 == -1) {
+				num3 = 2;
+				$(".main1_center2_scroll_box1").css("left", -left3 * (num3 + 1));
 			}
 
-			$(".main1_center2_scroll_nav1 li").eq(num3).addClass("select").siblings().removeClass("select");
+			$(".main1_center2_scroll_box1").stop().animate({ "left": -left3 * num3 }, 800);
+			if (num3 == 3) {
+				$(".main1_center2_scroll_nav1 li").eq(0).addClass("select").siblings().removeClass("select");
+			} else {
+
+				$(".main1_center2_scroll_nav1 li").eq(num3).addClass("select").siblings().removeClass("select");
+			}
 		}
 		$(".mcss2").mouseover(function () {
 			clearInterval(timer3);
@@ -264,7 +282,7 @@ $(function () {
 			}, 4000);
 		});
 		$(".pre2").click(function () {
-			num3 -= 1;
+			num3 -= 2;
 			foo3();
 		});
 		$(".next2").click(function () {
@@ -284,19 +302,22 @@ $(function () {
 		function foo4() {
 			num4++;
 
-			var left4 = num4 * $(".main_scroll_wrap ul").width();
+			var left4 = $(".main_scroll_wrap ul").width();
 
-			if (num4 >= 4) {
-
-				$(".main_scroll_wrap").animate({ "left": -left4 }, 800, function () {
-					$(".main_scroll_wrap").css("left", 0);
-				});
-				num4 = 0;
-			} else {
-				$(".main_scroll_wrap").stop().animate({ "left": -left4 }, 800);
+			if (num4 == 5) {
+				num4 = 1;
+				$(".main_scroll_wrap").css("left", 0);
+			}if (num == -1) {
+				num4 = 3;
+				$(".main_scroll_wrap").css("left", -left4 * (num4 + 1));
 			}
+			$(".main_scroll_wrap").stop().animate({ "left": -left4 * num4 }, 800);
 
-			$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select").siblings().removeClass("select");
+			if (num4 == 4) {
+				$(".main1_scrollbanner_nav3 li").eq(0).addClass("select").siblings().removeClass("select");
+			} else {
+				$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select").siblings().removeClass("select");
+			}
 		}
 		$(".main5_scroll").mouseover(function () {
 			clearInterval(timer4);
@@ -315,7 +336,7 @@ $(function () {
 		var main6content = document.getElementById("main6_content");
 		var strcon = "";
 		for (var con = 0; con < 100; con++) {
-			strcon += "\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont1.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u5168\u81EA\u52A8\u96E8\u4F1E \u7537\u58EB\u5546\u52A1\u6298\u53E0\u4F1E\u5927\u53F7\u53CC\u4EBA\u4E09\u6298\u6210\u4EBA\u7537\u5973\u81EA\u5F00\u81EA\u6536</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE518.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<img src=\"imgs/cont.jpg\"/>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont2.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u6CF0\u8FEA\u91D1\u6BDB\u5BA0\u7269\u6E7F\u7CAE\u7F8E\u6BDB\u5065\u80A4\u72D7\u96F6\u98DF375g</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE51188.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl>\n\t\t\t\t</div>\n\t\t\t\t";
+			strcon += "\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont1.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u5168\u81EA\u52A8\u96E8\u4F1E \u7537\u58EB\u5546\u52A1\u6298\u53E0\u4F1E\u5927\u53F7\u53CC\u4EBA\u4E09\u6298\u6210\u4EBA\u7537\u5973\u81EA\u5F00\u81EA\u6536</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE518.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><img src=\"imgs/cont.jpg\"/></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont2.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u6CF0\u8FEA\u91D1\u6BDB\u5BA0\u7269\u6E7F\u7CAE\u7F8E\u6BDB\u5065\u80A4\u72D7\u96F6\u98DF375g</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE51188.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl></a>\n\t\t\t\t</div>\n\t\t\t\t";
 		}
 		main6content.innerHTML = strcon;
 	})();

@@ -28,21 +28,32 @@ $(function(){
 function foo(){
 			num++;
 			
-		var left1=num*($("#main1_scrollbanner_warp img").width());
 		
-		if(num>=4){
-			$("#main1_scrollbanner_warp")
-			.animate({"left":-left1},800,function(){
-				$("#main1_scrollbanner_warp").css("left",0)
-			})
-				num=0;
-			}else{
-			$("#main1_scrollbanner_warp")
-			.stop().animate({"left":-left1},800)
+		var left1=$("#main1_scrollbanner_warp img").width();
+		if(num==5){
+				
+			num=1;
+			$("#main1_scrollbanner_warp").css("left",0)
+				
 			}
-			$(".main1_scrollbanner_nav li").eq(num).addClass("select")
+		if(num == -1){
+			num = 3;
+			$("#main1_scrollbanner_warp")
+			.css("left",-left1*(num+1))			
+		}
+		
+			$("#main1_scrollbanner_warp")
+			.stop().animate({"left":-left1*num},800)
+			if(num==4){
+					$(".main1_scrollbanner_nav li").eq(0).addClass("select")
 			.siblings().removeClass("select");
 
+			}else{
+				$(".main1_scrollbanner_nav li").eq(num).addClass("select")
+			   .siblings().removeClass("select");
+
+			}
+		
 			
 			
 		}
@@ -59,7 +70,7 @@ function foo(){
 		},5000)
 		})
 		$(".pre").click(function(){
-			num-=1;
+			num-=2;
 			foo();
 		})
 		$(".next").click(function(){
@@ -205,22 +216,30 @@ $("#new_1").hover(function(){
 function foo2(){
 			num2++;
 			
-		var left2=num2*($(".main1_center2_scroll_box li").width());
+		var left2=($(".main1_center2_scroll_box li").width());
 		
-		if(num2>=3){
-			$(".main1_center2_scroll_box")
-			.animate({"left":-left2},800,function(){
+		if(num2==4){
+			num2=1;
 				$(".main1_center2_scroll_box").css("left",0)
-			})
-				num2=0;
-			}else{
-			$(".main1_center2_scroll_box")
-			.stop().animate({"left":-left2},800)
+			
 			}
+		
+		if(num2 == -1){
+			num2=2;
+			$(".main1_center2_scroll_box").css("left",-left2*(num2+1))
+			
+		}
+		
+			$(".main1_center2_scroll_box")
+			.stop().animate({"left":-left2*num2},800);
+			if(num2==3){
+				$(".main1_center2_scroll_nav li").eq(0).addClass("select")
+			.siblings().removeClass("select");
+			}else{
 			
 			$(".main1_center2_scroll_nav li").eq(num2).addClass("select")
 			.siblings().removeClass("select");
-
+                  }
 			
 			
 		}
@@ -237,7 +256,7 @@ function foo2(){
 		},3000)
 		})
 		$(".pre1").click(function(){
-			num2-=1;
+			num2-=2;
 			foo2();
 		})
 		$(".next1").click(function(){
@@ -275,24 +294,30 @@ $(".cc1").hover(function(){
 function foo3(){
 			num3++;
 			
-		var left3=num3*($(".main1_center2_scroll_box1 li").width());
+		var left3=($(".main1_center2_scroll_box1 li").width());
 		
-		if(num3>=3){
+		if(num3==4){
+			num3=1;
 			
-			$(".main1_center2_scroll_box1")
-			.animate({"left":-left3},800,function(){
 				$(".main1_center2_scroll_box1").css("left",0)
-			})
-				num3=0;
-			}else{
-			$(".main1_center2_scroll_box1")
-			.stop().animate({"left":-left3},800)
+			
+				
+			}if(num3== -1){
+				num3 = 2 ;
+				$(".main1_center2_scroll_box1").css("left",-left3*(num3+1))
 			}
+		
+			$(".main1_center2_scroll_box1")
+			.stop().animate({"left":-left3*num3},800)
+			if(num3==3){
+				$(".main1_center2_scroll_nav1 li").eq(0).addClass("select")
+			.siblings().removeClass("select");
+			}else{
 			
 			$(".main1_center2_scroll_nav1 li").eq(num3).addClass("select")
 			.siblings().removeClass("select");
 
-			
+			}
 			
 		}
     $(".mcss2").mouseover(function(){
@@ -308,7 +333,7 @@ function foo3(){
 		},4000)
 		})
 		$(".pre2").click(function(){
-			num3-=1;
+			num3-=2;
 			foo3();
 		})
 		$(".next2").click(function(){
@@ -331,23 +356,30 @@ function foo3(){
 function foo4(){
 			num4++;
 			
-		var left4=num4*($(".main_scroll_wrap ul").width());
+		var left4=($(".main_scroll_wrap ul").width());
 		
-		if(num4>=4){
-			
-			$(".main_scroll_wrap")
-			.animate({"left":-left4},800,function(){
+		if(num4==5){
+			num4=1;
 				$(".main_scroll_wrap").css("left",0)
-			})
-				num4=0;
-			}else{
-			$(".main_scroll_wrap")
-			.stop().animate({"left":-left4},800)
-			}
 			
-			$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select")
+				
+			}if(num==-1){
+				num4=3
+					$(".main_scroll_wrap").css("left",-left4*(num4+1))
+			}
+			$(".main_scroll_wrap")
+			.stop().animate({"left":-left4*num4},800)
+			
+			if(num4==4){
+				$(".main1_scrollbanner_nav3 li").eq(0).addClass("select")
 			.siblings().removeClass("select");
 
+			}else{
+				$(".main1_scrollbanner_nav3 li").eq(num4).addClass("select")
+			.siblings().removeClass("select");
+
+			
+			}
 			
 			
 		}
@@ -374,7 +406,7 @@ function foo4(){
 			for(var con=0;con<100;con++){
 				strcon+=`
 				<div class="main6_content_box">
-					<dl>
+					<a href=""><dl>
 						<dt><img src="imgs/cont1.jpg"/></dt>
 						<dd>
 							<p>全自动雨伞 男士商务折叠伞大号双人三折成人男女自开自收</p>
@@ -382,13 +414,13 @@ function foo4(){
 								￥18.00
 							</span>
 						</dd>
-					</dl>
+					</dl></a>
 				</div>
 				<div class="main6_content_box">
-					<img src="imgs/cont.jpg"/>
+					<a href=""><img src="imgs/cont.jpg"/></a>
 				</div>
 				<div class="main6_content_box">
-					<dl>
+					<a href=""><dl>
 						<dt><img src="imgs/cont2.jpg"/></dt>
 						<dd>
 							<p>泰迪金毛宠物湿粮美毛健肤狗零食375g</p>
@@ -396,7 +428,7 @@ function foo4(){
 								￥1188.00
 							</span>
 						</dd>
-					</dl>
+					</dl></a>
 				</div>
 				`;
 			

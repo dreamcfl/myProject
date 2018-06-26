@@ -32,7 +32,7 @@ $(function(){
 		var login_text1=document.getElementById("login_text1");
 		var login_psw1=document.getElementById("login_psw1");
 		
-		var lgstr=/^[a-zA-z]\w{5,14}$/;
+		var lgstr=/^\w{6,14}$/;
 		
 		login_text.oninput=function(){
 			if(lgstr.test(login_text.value)){
