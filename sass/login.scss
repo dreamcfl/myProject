@@ -1,0 +1,258 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,input{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6,strong{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../jsp/fonts/iconfont.eot');
+  src: url('../jsp/fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../jsp/fonts/iconfont.woff') format('woff'),
+  url('../jsp/fonts/iconfont.ttf') format('truetype'),
+  url('../jsp/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+
+
+//登录头部
+
+
+.login_header{
+    height: 80px;
+    width: 988px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .login_header_logo{
+        width: 298px;
+        
+        display: flex;justify-content: center;
+        align-items: center; 
+        .login_logo{
+        width: 124px;
+        height: 40px;
+        background: url(../imgs/sprite.head.png) -195px 0 ;
+        margin-right: 10px;
+       
+    }
+    h2{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    }
+    .wenjuan{
+        font-size: 12px;
+        margin-top: 50px;
+        a:hover{
+            color:#e4393c;
+            text-decoration: underline;
+        }
+    }
+   
+}
+
+//登录top
+.login_top{
+    height: 40px;
+    background: #fff8f0;
+    text-align: center;
+    line-height: 40px;
+    color: #999;
+    font-size: 14px;
+    strong{
+        color: #000;
+    }
+}
+//登录主体
+.login_center_wrap{
+    background: #e93854
+}
+.login_center{
+    height: 476px;
+    width: 988px;
+    margin: 0 auto;
+    position: relative;
+    background: url(../imgs/deng.png) no-repeat;
+    .login_content{
+        position: absolute;
+        width: 348px;
+        height: 428px;
+        background: #fff;
+        right: 0;
+        top: 10px;
+        .login_content_top{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #fff8f0;
+            font-size: 12px;
+            color: #999;
+        }
+        .dl_xz{
+            display: flex;
+            height: 50px;
+            border-bottom: 1px solid #f1f1f1;
+            
+            
+            line-height: 50px;
+            font-size: 18px;
+            justify-content: space-around;
+            h3{
+                cursor: pointer;
+                &:hover{
+                    color: #d54851;
+                    font-weight: 600;
+                }
+                
+            }
+            .sao{
+                color: #d54851;
+                font-weight: 600;
+            }
+            
+        }
+        .login_content_center{
+            width: 348px;
+            //overflow: hidden;
+           
+            .login_scroll{
+                display: flex;
+            }
+            .login_hide1{
+                display: none;
+            }
+            ul { 
+               
+                width: 348px;
+                font-size: 12px;
+                display: flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction: column;
+                li{
+                    width: 348px;
+                display: flex;
+                justify-content: center;
+                img{
+                    margin: 12px 0;
+                }
+                a{
+                    color: #e93854;
+                }
+                p{
+                    font-family: 'iconfont';
+                    margin:20px 12px 0;
+                }
+            }
+            .img_erwei{
+                margin: 0 auto;
+                margin-top: 20px;
+                width: 170px;
+                height: 150px;
+                border: 1px solid #f1f1f1;
+            }
+            } 
+            .login_hide1{
+                position: relative;
+                margin: 30px 0;
+               
+                
+                >p{position: absolute;
+                right: 10px;bottom: -25px;
+                
+                }
+                li{
+                    width: 305px;
+                    height: 40px; 
+                    margin: 20px 0;
+                    border: 1px solid #ddd;
+                    margin-left: 20px;
+                    >div{
+                        text-align: center;
+                        line-height: 40px;
+                        width: 40px;
+                        height: 40px;
+                        background: #f3f3f3;
+                    }
+                    input{
+                       
+                        width: 265px;
+                        height: 40px;
+                        text-indent: 10px;
+                        border: none;
+                    }
+                    
+                }
+                #btn_login{
+                    margin-left:20px;
+                        width: 305px;
+                        height: 40px;
+                        background: #e4393c;
+                        color: #fff;font-size: 20px;
+                        
+                    }
+            }
+           
+        }
+        .login_content_bottom{
+            height: 48px;
+            background: #fcfcfc;
+            margin-top: 40px;
+           display: flex;
+           justify-content:space-around;
+           align-items: center;
+           ol{margin-left: 10px;
+                display: flex;
+           justify-content: center;
+           align-items: center;
+           li{
+               padding: 0 10px;
+           }
+           }
+           .lg_zhuce a{
+               color: #e4393c;
+               
+           }
+        }
+    }
+    
+    
+}
+
+
+
+
+//登录footer
+.login_footer{
+    height: 142px;
+    width: 998px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    ul{
+        margin: 10px 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        li{
+            padding: 12px;
+            a:hover{
+                color: #d54851;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+

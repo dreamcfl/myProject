@@ -267,13 +267,18 @@ header{
 html,body{
     height: 100%;
 }
+
+
 .global_toolbar{
     position: fixed;
     width: 30px;
-    border-right: 5px solid #7a6e6e;
-    right: 0;
+  border-right: 5px solid #7a6e6e;
+
+    right:0px;
     top: 0;
     height: 100%;
+    z-index: 3;
+    
     .scroll_fan{
         font-size: 18px;
         height: 35px;
@@ -286,6 +291,7 @@ html,body{
         line-height: 30px;
         color: #fff;
          strong{
+             width: 50px;
                 display:none;
                 height: 35px;
                 background: #c81623;
@@ -293,10 +299,12 @@ html,body{
                 padding: 0 10px;
                 position: absolute;
                 top:0;
-                left:  -65px;
+                left:  -0px;
+                z-index: -1;
             }
         &:hover{
             background: #c81623;
+             width: 35px;
         }
     }
     .scroll_ding{
@@ -311,6 +319,7 @@ html,body{
         line-height: 30px;
         cursor: pointer;
          strong{
+             width: 50px;
                 display:none;
                 height: 35px;
                 background: #c81623;
@@ -318,10 +327,12 @@ html,body{
                 padding: 0 10px;
                 position: absolute;
                 top:0;
-                left:  -65px;
+                left:  -0px;
+                 z-index: -1;
             }
         &:hover{
             background: #c81623;
+             width: 35px;
         }
     }
     .scroll_ce{
@@ -343,6 +354,7 @@ html,body{
             background: #7a6e6e;
             &:hover{
                 background: #c81623;
+                width: 35px;
             }
             #che_num{
                 width: 12px;
@@ -358,7 +370,9 @@ html,body{
                 right: 0;
                 position: absolute;
             }
+            
             strong{
+                width: 50px;
                 display:none;
                 height: 35px;
                 background: #c81623;
@@ -366,14 +380,91 @@ html,body{
                 padding: 0 10px;
                 position: absolute;
                 top:0;
-                left:  -65px;
+               z-index: -1;
+                left:  -0px;
             }
-            .stro_che{
-                left: -65px;
-                padding: 0 15px;
-            }
+           
             
         }
+    }
+    
+    .gwc_xian{
+        width: 260px;
+        height: 100%;
+        background:#eceaeb;
+        position: absolute;
+        left: 35px;
+       // display: none;
+         z-index: 2;
+         
+         .xian_top{
+             display: flex;justify-content:space-between;
+             align-items: center;
+             margin-top: 20px;
+             height: 50px;
+             border-bottom: 1px solid #ddd;
+            font-size: 20px;
+             h5{
+                 margin-left: 20px;
+                 font-family: 'iconfont';
+                 
+             }
+             #gunabi{
+                 margin-right: 30px;
+                 cursor: pointer;
+             }
+         }
+         .gwc_center{
+             font-size: 12px;
+             overflow: auto;
+             height: 600px;
+            
+             margin-top: 10px;
+             dl{
+                 background: #fff;
+                 display: flex;
+                 padding: 10px;
+                 dd{
+                     margin-left: 10px;
+                     p{
+                         margin-bottom: 10px;
+                     }
+                     span{
+                         
+                         color: #d54851;
+                         margin-right: 4px;
+                     }
+                 }
+             }
+         }
+         
+         .xian_bottom{
+             position: absolute;
+             bottom: 30px;
+             display: flex;
+             align-items: center;
+              font-size: 12px;
+             
+              justify-content: space-between;
+             a{
+                 width: 120px;
+                 height: 28px;
+                 display: block;
+                 color: #fff;
+                 background: #d54851;
+                 text-align: center;
+                 line-height: 28px;
+                margin-left: 20px;
+             }
+             div{
+                 width: 100px;
+                 margin-left: 8px;
+                
+             }
+         }
+         p span{
+             color: #d54851;
+         }
     }
 }
 
@@ -389,6 +480,11 @@ html,body{
    
   min-height: 800px;
 }
+
+
+
+
+
 //footer
 footer{
     height: 634px;
