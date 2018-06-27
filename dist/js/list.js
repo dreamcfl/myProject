@@ -11,6 +11,8 @@ $(function () {
 		gwc_list.innerHTML = strs1;
 	})();
 
+	//		接口数据生成
+
 	(function () {
 
 		var classid = location.search.split("=")[1];

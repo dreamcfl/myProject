@@ -1,7 +1,7 @@
 $(function(){
 	
 	
-		
+//		接口数据生成
 		(function(){
 			
 		$.ajax({
