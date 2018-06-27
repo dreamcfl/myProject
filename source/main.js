@@ -72,13 +72,13 @@ $(function(){
 				var index=$(this).index();
 				$(".scroll_ce div")
 				.eq(index).find("strong")
-				.fadeIn();
+				.stop().animate({left:'-65px'},400).show();
 			
 			},function(){
 				var index=$(this).index();
 				$(".scroll_ce div")
 				.eq(index).find("strong")
-				.fadeOut();
+				.stop().animate({left:'0'},400).hide();
 			})
 		
 			
@@ -88,11 +88,12 @@ $(function(){
 			$(".scroll_ding").hover(function(){
 				var index=$(this).index();
 				$(this).find("strong")
-				.fadeIn();
+				.show()
+				.stop().animate({left:'-65px'},400);
 			
 			},function(){
 				$(this).find("strong")
-				.fadeOut();
+				.stop().animate({left:'0'},400).hide();
 			})
 		
 			
@@ -102,17 +103,37 @@ $(function(){
 			$(".scroll_fan").hover(function(){
 				var index=$(this).index();
 				$(this).find("strong")
-				.fadeIn();
+				.show()
+				.stop().animate({left:'-65px'},400);
 			
 			},function(){
 				$(this).find("strong")
-				.fadeOut();
+				.stop().animate({left:'0'},400).hide();
 			})
 		
 			
 		})();
 		
-	
+	//出现购物篮及隐藏
+	(function(){
+		
+		$("#gunabi").click(function(){
+			$(".gwc_xian").stop().animate({left:"35px"},800)
+			
+			
+		})
+		
+		$(".scroll_ce2").click(function(){
+			$(".gwc_xian").stop().animate({left:"-220px"},800)
+			
+			
+		})
+		
+		
+		
+		
+		
+	})();
 	
 	
 	
