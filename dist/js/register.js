@@ -35,20 +35,26 @@ $(function () {
 		var lu_class1 = document.getElementById("lu_class1");
 		var lu_class2 = document.getElementById("lu_class2");
 		var lu_class3 = document.getElementById("lu_class3");
-		hm_txt2.onblur = function () {
-
-			if (yzstr2.test(hm_txt2.value)) {} else {
-				hm_txt21.innerHTML = "请输入正确的账户名格式！";
-			}
-		};
-		hm_txt3.onblur = function () {
-
-			if (yzstr2.test(hm_txt3.value)) {} else {
-				hm_txt31.innerHTML = "请输入6~16位的密码格式！";
-			}
-		};
+		//	    	hm_txt2.onblur=function(){
+		//	    	
+		//	    	if(yzstr2.test(hm_txt2.value)){
+		//	    		
+		//	    	}else{
+		//	    		hm_txt21.innerHTML="请输入正确的账户名格式！"
+		//	    	}
+		//	    	
+		//	    }
+		//	    	hm_txt3.onblur=function(){
+		//	    	
+		//	    	if(yzstr2.test(hm_txt3.value)){
+		//	    		
+		//	    	}else{
+		//	    		hm_txt31.innerHTML="请输入6~16位的密码格式！"
+		//	    	}
+		//	    	
+		//	    }
 		$("#btn_xyb2").click(function () {
-			$.get("http://datainfo.duapp.com/shopdata/userinfo.php", { status: "register", userID: $("input").eq(0).val(), password: $("input").eq(1).val() }, function (data) {
+			$.get("http://datainfo.duapp.com/shopdata/userinfo.php", { status: "register", userID: $("#hm_txt2").val(), password: $("#hm_txt3").val() }, function (data) {
 				data = JSON.parse(data);
 				console.log(data);
 				if (data == 0) {

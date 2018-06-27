@@ -57,10 +57,24 @@ $(function () {
 				login_psw1.style.color = "indianred";
 			}
 		};
-		btn_login.onclick = function () {
-			if (login_psw1.innerHTML == "√" && login_text1.innerHTML == "√") {
-				window.location = "../index.html";
-			}
-		};
+		//		btn_login.onclick=function(){
+		//			if(login_psw1.innerHTML=="√" && login_text1.innerHTML=="√"){
+		//				window.location="../index.html";
+		//			}
+		//			
+		//		}
+		$("#btn_login").click(function () {
+			$.get("http://datainfo.duapp.com/shopdata/userinfo.php", { status: "login", userID: $("#login_text").val(), password: $("#login_psw").val() }, function (data) {
+				data = JSON.parse(data);
+				console.log(data);
+				if (data == 0) {
+					alert("用户名不存在");
+				} else if (data == 2) {
+					alert("用户名或者密码错误");
+				} else {
+					window.location = "../index.html";
+				}
+			});
+		});
 	})();
 });

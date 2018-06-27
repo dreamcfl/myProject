@@ -6,7 +6,7 @@ $(function(){
 			for(var con=0;con<2;con++){
 				strs1+=`
 				<div class="main6_content_box">
-					<a href=""><dl>
+					<a href="details.html"><dl>
 						<dt><img src="../imgs/cont1.jpg"/></dt>
 						<dd>
 							<p>全自动雨伞 男士商务折叠伞大号双人三折成人男女自开自收</p>
@@ -17,10 +17,10 @@ $(function(){
 					</dl></a>
 				</div>
 				<div class="main6_content_box">
-					<a href=""><img src="../imgs/cont.jpg"/ id="img_box"></a>
+					<a href="details.html"><img src="../imgs/cont.jpg"/ id="img_box"></a>
 				</div>
 				<div class="main6_content_box">
-					<a href=""><dl>
+					<a href="details.html"><dl>
 						<dt><img src="../imgs/cont2.jpg"/></dt>
 						<dd>
 							<p>泰迪金毛宠物湿粮美毛健肤狗零食375g</p>
