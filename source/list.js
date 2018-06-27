@@ -3,7 +3,7 @@ $(function(){
 	(function(){
 			var gwc_list =document.getElementById("gwc_list");
 			var strs1="";
-			for(var con=0;con<3;con++){
+			for(var con=0;con<2;con++){
 				strs1+=`
 				<div class="main6_content_box">
 					<a href=""><dl>
@@ -17,7 +17,7 @@ $(function(){
 					</dl></a>
 				</div>
 				<div class="main6_content_box">
-					<a href=""><img src="../imgs/cont.jpg"/></a>
+					<a href=""><img src="../imgs/cont.jpg"/ id="img_box"></a>
 				</div>
 				<div class="main6_content_box">
 					<a href=""><dl>

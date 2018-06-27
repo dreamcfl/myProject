@@ -47,6 +47,22 @@ $(function () {
 				hm_txt31.innerHTML = "请输入6~16位的密码格式！";
 			}
 		};
+		$("#btn_xyb2").click(function () {
+			$.get("http://datainfo.duapp.com/shopdata/userinfo.php", { status: "register", userID: $("input").eq(0).val(), password: $("input").eq(1).val() }, function (data) {
+				data = JSON.parse(data);
+				console.log(data);
+				if (data == 0) {
+					alert("用户名重名");
+				} else if (data == 1) {
+					txzh.style.display = "none";
+					gw.style.display = "block";
+					lu_class2.className = "";
+					lu_class3.className = "lu_1";
+				} else {
+					alert("注册失败，请重试");
+				}
+			});
+		});
 
 		btn_xyb.onclick = function () {
 			if (yzstr1.test(document.getElementById("input_zc").value)) {
@@ -56,14 +72,15 @@ $(function () {
 				lu_class2.className = "lu_1";
 			}
 		};
-		btn_xyb2.onclick = function () {
-			if (yzstr2.test(hm_txt2.value) && yzstr2.test(hm_txt3.value)) {
-				txzh.style.display = "none";
-				gw.style.display = "block";
-				lu_class2.className = "";
-				lu_class3.className = "lu_1";
-			}
-		};
+		//	    	  btn_xyb2.onclick=function(){
+		//	    	  	if(yzstr2.test(hm_txt2.value) && yzstr2.test(hm_txt3.value)){
+		//	    	  		txzh.style.display="none";
+		//	    	  		gw.style.display="block";
+		//	    	  		lu_class2.className="";
+		//	    		    lu_class3.className="lu_1";
+		//	    	  	}
+		//	    	  }
+
 
 		document.onselectstart = function () {
 			return false;

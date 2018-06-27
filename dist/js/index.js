@@ -2,17 +2,123 @@
 
 $(function () {
 
+	(function () {
+
+		$.ajax({
+			type: "get",
+			url: "https://dc.3.cn/category/get?callback=?",
+			dataType: "jsonp",
+			scriptCharset: "gb2312",
+			success: function success(res) {
+
+				//console.log(res);
+
+				var $ul = $('.lists');
+
+				for (var i = 0; i < res.data.length; i++) {
+					var menu = res.data[i];
+
+					var $li = $('<li class="list"></li>');
+					$ul.append($li);
+
+					//创建二级目录
+
+					var $secondMenuDiv = $('<div class="box"></div>');
+					$li.append($secondMenuDiv);
+
+					//二级目录 顶部
+					var $topP = $('<p></p>');
+					$secondMenuDiv.append($topP);
+					for (var n = 0; n < menu.t.length; n++) {
+						var tmpArray = menu.t[n].split('|'); //jiadian.jd.com/|家电馆||0
+						var _$span = $('<a class="tips" href=""></a>');
+						_$span.html(tmpArray[1]);
+						$topP.append(_$span);
+						var $TmpA = $('<span>&gt;</span>');
+						_$span.append($TmpA);
+					}
+
+					//一级目录  家用电器  jiadian.jd.com|家用电器||0
+					for (var j = 0; j < menu.s.length; j++) {
+						if (j >= 1) {
+							var $tmp = $('<span class="fgx">/</span>');
+							$li.append($tmp);
+						}
+						var str = menu.s[j].n;
+						var firstMenuName = str.split('|')[1];
+						var $firstMenuSpan = $('<a class="menu" href=""></a>');
+						$firstMenuSpan.html(firstMenuName);
+						$li.append($firstMenuSpan);
+
+						//二级目录的第 2,3,4,5,6行
+
+						for (var m = 0; m < menu.s[j].s.length; m++) {
+							var $secondP = $('<p></p>');
+							$secondMenuDiv.append($secondP);
+
+							//每行的标题
+							var obj = menu.s[j].s[m];
+							var title = obj.n.split('|')[1];
+							var $span = $('<a class="title" href=""></a>');
+							$span.html(title);
+							$secondP.append($span);
+
+							var $tmpA = $('<span>&gt;</span>');
+							$span.append($tmpA);
+
+							//二级目录 每行的内容
+							var $tagsDiv = $('<a class="tags" href=""></a>');
+							$secondP.append($tagsDiv);
+							for (var k = 0; k < obj.s.length; k++) {
+								var secondContentObj = obj.s[k];
+								var _title = secondContentObj.n.split('|')[1];
+								var _$span2 = $('<a class="tag" href=""></a>');
+								_$span2.html(_title);
+								$tagsDiv.append(_$span2);
+							}
+						}
+
+						//二级目录 后面的图片
+						var $imgBoxDiv = $('<div class="imgBox"></div>');
+						$secondMenuDiv.append($imgBoxDiv);
+						for (var h = 0; h < menu.b.length; h++) {
+							var src = '//img10.360buyimg.com/' + menu.b[h].split('|')[2];
+							var $img = $('<img/>');
+							$img.attr('src', src);
+							$imgBoxDiv.append($img);
+						}
+					}
+				}
+			}
+		});
+	})();
+
+	(function () {
+		$("#search_btn").click(function () {
+
+			if ($("#seach_text").val() != "") {
+				location.href = "html/list.html";
+			}
+		});
+	})();
+
 	//右内容更换出现效果
-	$("#main1_banner #list_1").hover(function () {
-		$(".main1_list1").show();
+	$("#main1_banner li").hover(function () {
+		var index = $(this).index();
+		$(this).find("div").show();
+		//$(".main1_list1").show();
 	}, function () {
-		$(".main1_list1").hide();
+		var index = $(this).index();
+		$(this).find("div").hide();
+
+		//$(".main1_list1").hide();
 	});
-	$("#main1_banner #list_2").hover(function () {
-		$(".main1_list2").show();
-	}, function () {
-		$(".main1_list2").hide();
-	});
+	//	$("#main1_banner #list_2").hover(function(){
+	//		$(".main1_list2").show();
+	//	},function(){
+	//		$(".main1_list2").hide();
+	//		
+	//	});
 	//banner轮播功能
 	var num = 0;
 	var timer = null;

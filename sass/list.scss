@@ -138,6 +138,17 @@ color: #989898;
         
     }
 }
+.sousuo{
+    width: $widz;
+    margin: 0 auto;
+    margin-top: 10px;
+    span a{
+        color: red;
+        font-size: 24px;
+        margin-left: 10px;
+        
+    }
+}
 .list_center{
    
     
@@ -165,6 +176,13 @@ color: #989898;
             flex-wrap: wrap;
             li{
                 margin: 0 10px;
+               img{
+                   border: 1px solid #ddd;
+                   padding:2px;
+                   &:hover{
+                       border: 1px solid #000;
+                   }
+               }
             }
         }
     }
@@ -190,8 +208,13 @@ color: #989898;
             height: 302px;
             background: #fff;
             border: 1px solid #ddd;
+            #img_box{
+                width: 230px;
+                height: 302px;
+            }
             &:hover{
                 opacity: .8;
+                border: 1px solid #000;
                 color:red;
             }
             dl{
