@@ -85,8 +85,7 @@ $(function(){
 			shu--;
 			if(shu<=1){
 				gwc_shu.value="1";
-				 xzsl1.innerHTML="1";
-				  gcz1.innerHTML=gcd1.innerHTML;
+				
 				shu=1
 			}else{
 				gwc_shu.value= shu ;
@@ -95,10 +94,13 @@ $(function(){
 			}
 		 	 
 		}
-		
+		var zonghe=$("#che_num").text();
 		$("#jrgwz").click(function(){
-			
-			location.reload();
+			zonghe=parseInt($("#gwc_shu").val())+parseInt(zonghe);
+			console.log(zonghe);
+			$("#che_num").text(zonghe);
+			$("#xian_top_a").text(zonghe);
+			$("#gwz_dz").text($("#gwc_shu").val());
 		})
 		
 		

@@ -544,7 +544,7 @@ function foo4(){
 		(function(){
 			var main6content =document.getElementById("main6_content");
 			var strcon="";
-			for(var con=0;con<100;con++){
+			for(var con=0;con<10;con++){
 				strcon+=`
 				<div class="main6_content_box">
 					<a href=""><dl>
@@ -577,7 +577,25 @@ function foo4(){
 			main6content.innerHTML=strcon;
 		})();
 		
-		
+		(function(){
+			
+					$.get("http://datainfo.duapp.com/shopdata/getclass.php",function(data){
+						data = JSON.parse(data);
+						console.log(data);
+						var str = "";
+						$.each(data,function(index,item){
+							str += `<a href="html/list.html?classID=${item.classID}">${item.className}</a>`;
+						})
+						$(".main7_content").html(str);
+					})
+			
+			
+			
+			
+			
+			
+			
+		})()
 
 	
 		

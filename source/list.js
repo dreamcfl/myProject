@@ -36,7 +36,29 @@ $(function(){
 			gwc_list.innerHTML=strs1;
 		})();
 		
-	
+	(function(){
+		
+		var classid = location.search.split("=")[1];
+					$.getJSON("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?",{classID:classid},function(data){
+						console.log(data);
+						var str = "";
+						$.each(data,function(index,item){
+							str += `<div>
+							<a href="details.html?id=${item.goodsID}">
+							<img src="${item.goodsListImg}">
+							<p>${item.goodsName}</p>
+							<p><span>￥${item.price}</span></p>
+							
+							</div>`
+						})
+						$(".shangpinzhanshi1").html(str);
+					});
+					
+		
+		
+		
+		
+	})();
 	
 	
 })

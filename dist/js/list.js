@@ -10,4 +10,17 @@ $(function () {
 		}
 		gwc_list.innerHTML = strs1;
 	})();
+
+	(function () {
+
+		var classid = location.search.split("=")[1];
+		$.getJSON("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?", { classID: classid }, function (data) {
+			console.log(data);
+			var str = "";
+			$.each(data, function (index, item) {
+				str += "<div>\n\t\t\t\t\t\t\t<a href=\"details.html?id=" + item.goodsID + "\">\n\t\t\t\t\t\t\t<img src=\"" + item.goodsListImg + "\">\n\t\t\t\t\t\t\t<p>" + item.goodsName + "</p>\n\t\t\t\t\t\t\t<p><span>\uFFE5" + item.price + "</span></p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>";
+			});
+			$(".shangpinzhanshi1").html(str);
+		});
+	})();
 });
