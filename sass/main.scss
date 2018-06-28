@@ -418,15 +418,20 @@ html,body{
              font-size: 12px;
              overflow: auto;
              height: 600px;
-            
+         
              margin-top: 10px;
              dl{
                  background: #fff;
                  display: flex;
                  padding: 10px;
+                 dt img{
+                     width: 80px;height: 80px;
+                     
+                 }
                  dd{
                      margin-left: 10px;
                      p{
+                         width: 130px;
                          margin-bottom: 10px;
                      }
                      span{
@@ -439,8 +444,8 @@ html,body{
          }
          
          .xian_bottom{
-             position: absolute;
-             bottom: 30px;
+//           position: absolute;
+//           bottom: 30px;
              display: flex;
              align-items: center;
               font-size: 12px;

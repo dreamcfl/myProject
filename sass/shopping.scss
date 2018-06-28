@@ -97,7 +97,7 @@ color: #989898;
             margin-left: 40px;
         }
     }
-    .gwc_content{
+    .gwc_content,.gwc_content1{
         font-size:12px;
         >p{
             font-size: 12px;
@@ -130,6 +130,9 @@ color: #989898;
             display: flex;
             dt{
                 margin: 0 10px;
+                img{
+                    width: 80px;height: 80px;
+                }
             }
             dd{
                 width: 208px;

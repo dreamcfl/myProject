@@ -222,12 +222,7 @@ $(function () {
 			var Ohours = Math.floor(t1 / 3600 / 24); //小时
 			var Omiunties = Math.floor(t1 / 60 % 60); //分钟
 			var Oseconds = Math.floor(t1 % 60); //秒
-			//console.log(Omiunties);
-			//				if(Oday<10){
-			//					Oday = "0"+Oday;     //将他们转化为字符串
-			//				}else{
-			//					Oday = ""+Oday;
-			//				}
+
 			if (Ohours < 10) {
 				Ohours = "0" + Ohours;
 			} else {
@@ -460,4 +455,46 @@ $(function () {
 			$(".main7_content").html(str);
 		});
 	})();
+
+	//购物车变化
+	$.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?", { userID: $.cookie("username") }, function (data) {
+		console.log(data);
+		var str = "";
+		var zongsl = 0;
+		var zongjg = 0;
+		$.each(data, function (index, item) {
+			str += "\n\t\t\t\t\t\t\t\n\t\t\t\t<a href=\"html/details.html?id=" + item.goodsID + "\"><dl class=\"gwc_ct_list\">\n\t\t\t\t\t\t\t<dt><img src=\"" + item.goodsListImg + "\"/></dt>\n\t\t\t\t\t\t\t<dd><p>" + item.goodsName + " </p>\n\t\t\t\t\t\t\t\t<p><span>\uFFE5<strong>" + item.price + "</strong></span>\xD7<strong id=\"gwz_dz\">1</strong></p>\n\t\t\t\t\t\t\t</dd>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</dl></a>\n\t\t\t\t";
+			zongsl += Number(item.number);
+			zongjg += Number(item.number) * Number(item.price);
+		});
+		var zongjg = zongjg.toFixed(2);
+		$("#zongshu_top").html(zongsl);
+		$("#che_num").html(zongsl);
+		$("#xian_top_a").html(zongsl);
+		$("#xian_top_b1").html(zongjg);
+		$(".gwc_center").html(str);
+	});
+
+	//判断显示用户登录信息
+	var xx = $.cookie('username');
+	var strlogxx = "<span>" + xx + "</span><a href=''>退出登录</a>";
+	var strlogxx1 = "<a href='login.html'>登录</a><a href='register.html'>注册</a>";
+	var strloga = "<a href='login.html'>你好，请登录</a>";
+	var strlogb = "<a href='register.html'>注册</a>";
+	if ($.cookie('username') != undefined) {
+		var strlog1 = "<span>你好，</span>";
+		var strlog2 = "<a href=''>退出登录</a>";
+		$(".yonghuxx").html(strlogxx);
+		$(".login_11").html(strlog1);
+		$(".login_22").html(strlog2);
+		$('.login_22').find("a").click(function () {
+			$(this).html(strlogb);
+			$(".login_11").html(strloga);
+			$.cookie('username', null, { expires: -1, path: "/" });
+		});
+		$(".yonghuxx").find("a").click(function () {
+			$(this).html(strlogxx1);
+			$.cookie('username', null, { expires: -1, path: "/" });
+		});
+	}
 });

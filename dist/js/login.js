@@ -72,6 +72,7 @@ $(function () {
 				} else if (data == 2) {
 					alert("用户名或者密码错误");
 				} else {
+					$.cookie("username", data.userID, { expires: 3, path: "/" });
 					window.location = "../index.html";
 				}
 			});

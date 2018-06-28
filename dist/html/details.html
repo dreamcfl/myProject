@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/details.css"/>
 		<link rel="icon" type="image/x-icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico"/>
 		<script src="../jsp/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
         <script src="../js/details.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -74,8 +75,8 @@
 			
 		</div>
 		<ul>
-			<li><a href="login.html">你好，请登录</a></li>
-			<li><a href="register.html" class="red">免费注册</a></li>
+			<li class="login_11"><a href="login.html">你好，请登录</a></li>
+			<li class="login_22"><a href="register.html" class="red">免费注册</a></li>
 			<li><a href="">我的订单</a></li> |
 			<li id="header_list1"><a href="">我的京东 ﹀</a>
 				<div id="header_1">
@@ -257,7 +258,7 @@
 				<div class="scroll_ce2">
 					<strong class="stro_che">购物车</strong>
 					&#xe887;<span id="che_num">
-						1
+						0
 					</span>
 				</div>
 				<div class="scroll_ce3">
@@ -281,18 +282,18 @@
 					<span id="gunabi">×</span>
 				</div>
 				<div class="gwc_center">
-					<a href="details.html"><dl class="gwc_ct_list">
+					<!--<a href="details.html"><dl class="gwc_ct_list">
 							<dt><img src="../imgs/as.jpg"/></dt>
 							<dd><p>聚衣尚品 男装休闲裤男 韩版修身透气系带短裤 男士运动裤夏季新款小脚裤 </p>
 								<p><span>￥199.00</span>×<strong id="gwz_dz">1</strong></p>
 							</dd>
 							
-						</dl></a>
+						</dl></a>-->
 				</div>
 				<div class="xian_bottom">
 					<div class="">
-						<p><span id="xian_top_a">1</span>件商品</p>
-						<p>共计：<span id="xian_top_b">￥<strong id="xian_top_b1">198.00</strong>
+						<p><span id="xian_top_a">0</span>件商品</p>
+						<p>共计：<span id="xian_top_b">￥<strong id="xian_top_b1">00</strong>
 						</span></p>
 					</div>
 					
@@ -323,19 +324,25 @@
 		
 		<div id="zoomBox">
 			<div id="midImg">
-				<img src="../imgs/2aa.jpg"/>
+				<div class="midImg1">
+				<!--<img src="../imgs/2aa.jpg"/>-->
+				</div>
 				<div id="zoom">
 					
 				</div>
 			</div>
 			<div id="bigImg">
-				<img src="../imgs/2aa.jpg"/>
+				<!--<img src="../imgs/2aa.jpg"/>-->
 			</div>
 		</div>
 		<div class="detail_t">
-			<h3>茵曼2018夏装新款净色高腰收腰显瘦中长连衣裙女【18821VP02046】 黄色 M</h3>
-			<p>京东秒杀价 <strong>￥168.00</strong></p>
-			<p>购 购买4-9件时享受单件价￥148.10，超出数量以结算价为准，仅限购买一次</p>
+			<h3 id="name_de">
+				<!--茵曼2018夏装新款净色高腰收腰显瘦中长连衣裙女【18821VP02046】 黄色 M-->
+			</h3>
+			<p>京东秒杀价 <strong id="jiage">
+				<!--￥168.00-->
+			</strong></p>
+			<p>购 购买4-9件时享受单件价88折优惠，超出数量以结算价为准，仅限购买一次</p>
 			<p>选择颜色
   <input type="radio" name="zz" id="" value="" />黄色
   <input type="radio" name="zz" id="" value="" />绿色
@@ -357,7 +364,9 @@
 				    	<input type="text" name="" id="gwc_shu" value="" disabled="disabled"/>
 				    	<input type="button" id="gwc_jia" value="+" />
 				    </div>
- 	<p id="jrgwz">加入购物车</p><a href="shopping.html" id="zhifu">去支付</a>
+ 	<p id="jrgwz">
+ 		添加购物车
+ 	</p><a href="shopping.html" id="zhifu">去支付</a>
  </div>
 		</div>
 	</div>	

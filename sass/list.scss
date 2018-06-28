@@ -202,19 +202,28 @@ color: #989898;
        justify-content: space-between;
        div:hover{
           opacity: .8;
+         
        }
-       a:hover{
-           color: red;
+       div{
+            margin: 20px 0;
        }
+     
        img{
-           width: 300px;
-           height: 250px;
+           width: 250px;
+           height: 200px;
        }
        p {
-           width: 300px;
+           width: 250px;
            margin: 10px 0;
        span{
            color: red;
+          
+         }
+         strong{
+             margin-left: 30px;
+             &:hover{
+                 color: red;
+             }
          }
        }
    }

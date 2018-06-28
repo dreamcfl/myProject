@@ -1307,6 +1307,9 @@ color: #989898;
         flex-wrap: wrap;
         a{
             padding: 20px;display: block;
+            &:hover{
+                color: red;
+            }
         }
     }
 
