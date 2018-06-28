@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 "use strict";
 
 $(function () {
@@ -343,4 +341,3 @@ $(function () {
 		main6content.innerHTML = strcon;
 	})();
 });
->>>>>>> dev
