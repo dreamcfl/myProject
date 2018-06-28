@@ -57,9 +57,11 @@ $(function(){
 		
 		//回到顶部
 		(function(){
-			$(".scroll_ding").click(function(){
-				$("html,body").animate({scrollTop:0},1500);
 			
+			$(".scroll_ding").click(function(){
+				if($(window).scrollTop()>0){
+				$("html,body").stop().animate({scrollTop:0},1000);
+			}
 			})
 		
 			

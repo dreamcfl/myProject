@@ -2,17 +2,124 @@
 
 $(function () {
 
+	//		接口数据生成
+	(function () {
+
+		$.ajax({
+			type: "get",
+			url: "https://dc.3.cn/category/get?callback=?",
+			dataType: "jsonp",
+			scriptCharset: "gb2312",
+			success: function success(res) {
+
+				//console.log(res);
+
+				var $ul = $('.lists');
+
+				for (var i = 0; i < res.data.length; i++) {
+					var menu = res.data[i];
+
+					var $li = $('<li class="list"></li>');
+					$ul.append($li);
+
+					//创建二级目录
+
+					var $secondMenuDiv = $('<div class="box"></div>');
+					$li.append($secondMenuDiv);
+
+					//二级目录 顶部
+					var $topP = $('<p></p>');
+					$secondMenuDiv.append($topP);
+					for (var n = 0; n < menu.t.length; n++) {
+						var tmpArray = menu.t[n].split('|'); //jiadian.jd.com/|家电馆||0
+						var _$span = $('<a class="tips" href=""></a>');
+						_$span.html(tmpArray[1]);
+						$topP.append(_$span);
+						var $TmpA = $('<span>&gt;</span>');
+						_$span.append($TmpA);
+					}
+
+					//一级目录  家用电器  jiadian.jd.com|家用电器||0
+					for (var j = 0; j < menu.s.length; j++) {
+						if (j >= 1) {
+							var $tmp = $('<span class="fgx">/</span>');
+							$li.append($tmp);
+						}
+						var str = menu.s[j].n;
+						var firstMenuName = str.split('|')[1];
+						var $firstMenuSpan = $('<a class="menu" href=""></a>');
+						$firstMenuSpan.html(firstMenuName);
+						$li.append($firstMenuSpan);
+
+						//二级目录的第 2,3,4,5,6行
+
+						for (var m = 0; m < menu.s[j].s.length; m++) {
+							var $secondP = $('<p></p>');
+							$secondMenuDiv.append($secondP);
+
+							//每行的标题
+							var obj = menu.s[j].s[m];
+							var title = obj.n.split('|')[1];
+							var $span = $('<a class="title" href=""></a>');
+							$span.html(title);
+							$secondP.append($span);
+
+							var $tmpA = $('<span>&gt;</span>');
+							$span.append($tmpA);
+
+							//二级目录 每行的内容
+							var $tagsDiv = $('<a class="tags" href=""></a>');
+							$secondP.append($tagsDiv);
+							for (var k = 0; k < obj.s.length; k++) {
+								var secondContentObj = obj.s[k];
+								var _title = secondContentObj.n.split('|')[1];
+								var _$span2 = $('<a class="tag" href=""></a>');
+								_$span2.html(_title);
+								$tagsDiv.append(_$span2);
+							}
+						}
+
+						//二级目录 后面的图片
+						var $imgBoxDiv = $('<div class="imgBox"></div>');
+						$secondMenuDiv.append($imgBoxDiv);
+						for (var h = 0; h < menu.b.length; h++) {
+							var src = '//img10.360buyimg.com/' + menu.b[h].split('|')[2];
+							var $img = $('<img/>');
+							$img.attr('src', src);
+							$imgBoxDiv.append($img);
+						}
+					}
+				}
+			}
+		});
+	})();
+
+	(function () {
+		$("#search_btn").click(function () {
+
+			if ($("#seach_text").val() != "") {
+				location.href = "html/list.html";
+			}
+		});
+	})();
+
 	//右内容更换出现效果
-	$("#main1_banner #list_1").hover(function () {
-		$(".main1_list1").show();
+	$("#main1_banner li").hover(function () {
+		var index = $(this).index();
+		$(this).find("div").show();
+		//$(".main1_list1").show();
 	}, function () {
-		$(".main1_list1").hide();
+		var index = $(this).index();
+		$(this).find("div").hide();
+
+		//$(".main1_list1").hide();
 	});
-	$("#main1_banner #list_2").hover(function () {
-		$(".main1_list2").show();
-	}, function () {
-		$(".main1_list2").hide();
-	});
+	//	$("#main1_banner #list_2").hover(function(){
+	//		$(".main1_list2").show();
+	//	},function(){
+	//		$(".main1_list2").hide();
+	//		
+	//	});
 	//banner轮播功能
 	var num = 0;
 	var timer = null;
@@ -115,12 +222,7 @@ $(function () {
 			var Ohours = Math.floor(t1 / 3600 / 24); //小时
 			var Omiunties = Math.floor(t1 / 60 % 60); //分钟
 			var Oseconds = Math.floor(t1 % 60); //秒
-			//console.log(Omiunties);
-			//				if(Oday<10){
-			//					Oday = "0"+Oday;     //将他们转化为字符串
-			//				}else{
-			//					Oday = ""+Oday;
-			//				}
+
 			if (Ohours < 10) {
 				Ohours = "0" + Ohours;
 			} else {
@@ -335,9 +437,64 @@ $(function () {
 	(function () {
 		var main6content = document.getElementById("main6_content");
 		var strcon = "";
-		for (var con = 0; con < 100; con++) {
+		for (var con = 0; con < 10; con++) {
 			strcon += "\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont1.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u5168\u81EA\u52A8\u96E8\u4F1E \u7537\u58EB\u5546\u52A1\u6298\u53E0\u4F1E\u5927\u53F7\u53CC\u4EBA\u4E09\u6298\u6210\u4EBA\u7537\u5973\u81EA\u5F00\u81EA\u6536</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE518.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><img src=\"imgs/cont.jpg\"/></a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"main6_content_box\">\n\t\t\t\t\t<a href=\"\"><dl>\n\t\t\t\t\t\t<dt><img src=\"imgs/cont2.jpg\"/></dt>\n\t\t\t\t\t\t<dd>\n\t\t\t\t\t\t\t<p>\u6CF0\u8FEA\u91D1\u6BDB\u5BA0\u7269\u6E7F\u7CAE\u7F8E\u6BDB\u5065\u80A4\u72D7\u96F6\u98DF375g</p>\n\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\uFFE51188.00\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</dd>\n\t\t\t\t\t</dl></a>\n\t\t\t\t</div>\n\t\t\t\t";
 		}
 		main6content.innerHTML = strcon;
 	})();
+
+	(function () {
+
+		$.get("http://datainfo.duapp.com/shopdata/getclass.php", function (data) {
+			data = JSON.parse(data);
+			console.log(data);
+			var str = "";
+			$.each(data, function (index, item) {
+				str += "<a href=\"html/list.html?classID=" + item.classID + "\">" + item.className + "</a>";
+			});
+			$(".main7_content").html(str);
+		});
+	})();
+
+	//购物车变化
+	$.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?", { userID: $.cookie("username") }, function (data) {
+		console.log(data);
+		var str = "";
+		var zongsl = 0;
+		var zongjg = 0;
+		$.each(data, function (index, item) {
+			str += "\n\t\t\t\t\t\t\t\n\t\t\t\t<a href=\"html/details.html?id=" + item.goodsID + "\"><dl class=\"gwc_ct_list\">\n\t\t\t\t\t\t\t<dt><img src=\"" + item.goodsListImg + "\"/></dt>\n\t\t\t\t\t\t\t<dd><p>" + item.goodsName + " </p>\n\t\t\t\t\t\t\t\t<p><span>\uFFE5<strong>" + item.price + "</strong></span>\xD7<strong id=\"gwz_dz\">1</strong></p>\n\t\t\t\t\t\t\t</dd>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</dl></a>\n\t\t\t\t";
+			zongsl += Number(item.number);
+			zongjg += Number(item.number) * Number(item.price);
+		});
+		var zongjg = zongjg.toFixed(2);
+		$("#zongshu_top").html(zongsl);
+		$("#che_num").html(zongsl);
+		$("#xian_top_a").html(zongsl);
+		$("#xian_top_b1").html(zongjg);
+		$(".gwc_center").html(str);
+	});
+
+	//判断显示用户登录信息
+	var xx = $.cookie('username');
+	var strlogxx = "<span>" + xx + "</span><a href=''>退出登录</a>";
+	var strlogxx1 = "<a href='login.html'>登录</a><a href='register.html'>注册</a>";
+	var strloga = "<a href='login.html'>你好，请登录</a>";
+	var strlogb = "<a href='register.html'>注册</a>";
+	if ($.cookie('username') != undefined) {
+		var strlog1 = "<span>你好，</span>";
+		var strlog2 = "<a href=''>退出登录</a>";
+		$(".yonghuxx").html(strlogxx);
+		$(".login_11").html(strlog1);
+		$(".login_22").html(strlog2);
+		$('.login_22').find("a").click(function () {
+			$(this).html(strlogb);
+			$(".login_11").html(strloga);
+			$.cookie('username', null, { expires: -1, path: "/" });
+		});
+		$(".yonghuxx").find("a").click(function () {
+			$(this).html(strlogxx1);
+			$.cookie('username', null, { expires: -1, path: "/" });
+		});
+	}
 });

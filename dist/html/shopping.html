@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/shopping.css"/>
 		<link rel="icon" type="image/x-icon" href="//www.jd.com/favicon.ico" mce_href="//www.jd.com/favicon.ico"/>
 		<script src="../jsp/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
         <script src="../js/shopping.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -74,8 +75,8 @@
 			
 		</div>
 		<ul>
-			<li><a href="login.html">你好，请登录</a></li>
-			<li><a href="register.html" class="red">免费注册</a></li>
+			<li class="login_11"><a href="login.html">你好，请登录</a></li>
+			<li class="login_22"><a href="register.html" class="red">免费注册</a></li>
 			<li><a href="">我的订单</a></li> |
 			<li id="header_list1"><a href="">我的京东 ﹀</a>
 				<div id="header_1">
@@ -286,8 +287,8 @@
 				
 			
 			<div class="gwc_content">
-				<p><input type="checkbox" name="" id="check1" value="" /><span id="ming">京东自营</span></p>
-				<div class="gwc_ct">
+				<p><input type="checkbox" name="" id="check1" value="" /><span id="ming">京东商城</span></p>
+				<!--<div class="gwc_ct">
 					<input type="checkbox" name="" id="check2" value="" />
 					
 						<a href="details.html"><dl class="gwc_ct_list">
@@ -309,8 +310,11 @@
 				    <span class="gwc_sc1">
 				    	删除
 				    </span>
-				</div>
+				</div>-->
 			   </div>
+			   <div class="gwc_content1">
+			   	
+			   	</div>
 			</div>
 			<div class="gwc_zong">
 				<p><input type="checkbox" name="checkall" id="checkall" value="" />全选</p>
@@ -319,11 +323,11 @@
 					<a href="">清理购物车</a>
 				</div>
 				<div id="xzsl">
-					已选中<span id="xzsl1">1</span>件商品
+					已选中<span id="xzsl1">0</span>件商品
 				</div>
 					<div id="money">
 						总价：
-					<span id="money1">￥ 199.00</span>
+					<span id="money1">￥ 00.00</span>
 					</div>
 				<div id="jiesuan">
 					

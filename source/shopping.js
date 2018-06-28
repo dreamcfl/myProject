@@ -36,58 +36,79 @@ $(function(){
 			gwc_list.innerHTML=strs1;
 		})();
 		
-	
-	//点击加减
+
 	(function(){
-		var gwc_jian =document.getElementById("gwc_jian");
-		 var gwc_jia =document.getElementById("gwc_jia");
-		 var gwc_shu=document.getElementById("gwc_shu");
-		 var xzsl1=document.getElementById("xzsl1");
-		 var gcd1=document.getElementsByClassName("gcd1")[0];
-		 var gcz1=document.getElementsByClassName("gcz1")[0];
-		 var gwc_ct_d1=document.getElementsByClassName("gwc_ct_d1")[0];
-		 var gwc_ct_z1=document.getElementsByClassName("gwc_ct_z1")[0];
-		 var shu=1;
-		 
-		 
-		 gwc_shu.value="1";
-		 gwc_jia.onclick=function(){
-		 	shu++;
-		 	 gwc_shu.value= shu ;
-		 	 xzsl1.innerHTML=shu;
-		 	 gcz1.innerHTML=(shu*gcd1.innerHTML).toFixed(2);
-		 }
-		gwc_jian.onclick=function(){
-			shu--;
-			if(shu<=1){
-				gwc_shu.value="1";
-				 xzsl1.innerHTML="1";
-				  gcz1.innerHTML=gcd1.innerHTML;
-				shu=1
-			}else{
-				gwc_shu.value= shu ;
-				 xzsl1.innerHTML=shu;
-				  gcz1.innerHTML=(shu*gcd1.innerHTML).toFixed(2);
-			}
-		 	 
-		}
-		$("#checkall").click(function(){
-			if($("#checkall:checked")){
-				$("#check1").prop("checked",$(this).prop("checked"));
-				$("#check2").prop("checked",$(this).prop("checked"));
-			}
-		})
-		$("#btn_js").click(function(){
-			
-			location.reload();
-		})
+		$.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?",{userID:$.cookie("username")},function(data){
+					console.log(data);
+					var str="";
+					$.each(data,function(index,item){
+							str += `
+							
+				<div class="gwc_ct">
+					<input type="checkbox" name="" id="check2" value="" />
+					
+						<a href="details.html?id=${item.goodsID}"><dl class="gwc_ct_list">
+							<dt><img src="${item.goodsListImg}"/></dt>
+							<dd>
+							<span id="ming">商品类型: ${item.className}</span>
+							<p> ${item.goodsName}</p>
+								<p>支持7天无理由退货</p>
+							</dd>
+							<dd><p>颜色：深蓝色1791常规</p>
+								<p>尺码：L</p>
+</dd>
+						</dl></a>
+				    <p class="gwc_ct_d1">￥<span class="gcd1">${item.price}.00</span></p>
+				    <div class="gwc_ctsl">
+				    	<input type="button" id="gwc_jian" value="-" />
+				    	<input type="text" name="" id="gwc_shu" value="${item.number}" disabled="disabled"/>
+				    	<input type="button" id="gwc_jia" value="+" />
+				    </div>
+				    <p class="gwc_ct_z1">￥<span class="gcz1">${item.price}.00</span></p>
+				    <span class="gwc_sc1" goodsID="${item.goodsID}">
+				    	删除
+				    </span>
+				</div>
+				`
+						})
+						$(".gwc_content1").html(str);
+					
+					
+					
+//			点击删除商品
+	$(".gwc_sc1").click(function(){
 		
-	})()
+		var id=$(this).attr("goodsID");
+		//console.log(id);
+						$(this).parent().remove();
+						$.get(" http://datainfo.duapp.com/shopdata/updatecar.php",{userID:$.cookie("username"),goodsID:id,number:0})
+				});
+					
+				
+					
+					
+					
+				})
+	
+	})();
 	
 	
 	
-	
-	
+	//判断显示用户登录信息
+	  var strloga="<a href='login.html'>你好，请登录</a>";
+	  var strlogb="<a href='register.html'>注册</a>";
+	if($.cookie('username')!=undefined){
+		var strlog1="<span>你好，</span>";
+		var strlog2="<a href=''>退出登录</a>";
+		
+		$(".login_11").html(strlog1);
+		$(".login_22").html(strlog2);
+		$('.login_22').find("a").click(function(){
+			$(this).html(strlogb);
+			$(".login_11").html(strloga);
+			$.cookie('username',null,{expires:-1,path:"/"});
+		})
+	}
 	
 	
 	
