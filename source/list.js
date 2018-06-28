@@ -1,5 +1,5 @@
 $(function(){
-	//生成展示的商品
+	//生成展示的商品 
 	(function(){
 			var gwc_list =document.getElementById("gwc_list");
 			var strs1="";
