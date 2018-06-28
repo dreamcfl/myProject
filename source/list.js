@@ -44,6 +44,7 @@ $(function(){
 					$.getJSON("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?",{classID:classid},function(data){
 						console.log(data);
 						var str = "";
+						var strlist="";
 						$.each(data,function(index,item){
 							str += `<div>
 							<a href="details.html?id=${item.goodsID}">
@@ -51,9 +52,11 @@ $(function(){
 							<p>${item.goodsName}</p>
 							<p><span>￥${item.price}</span><strong>查看商品详情</strong></p>
 							
-							</div>`
+							</div>`;
+							strlist=item.className;
 						})
 						$(".shangpinzhanshi1").html(str);
+						$("#shang_list").html(strlist);
 					});
 					
 		

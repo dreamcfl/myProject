@@ -19,10 +19,13 @@ $(function () {
 		$.getJSON("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?", { classID: classid }, function (data) {
 			console.log(data);
 			var str = "";
+			var strlist = "";
 			$.each(data, function (index, item) {
 				str += "<div>\n\t\t\t\t\t\t\t<a href=\"details.html?id=" + item.goodsID + "\">\n\t\t\t\t\t\t\t<img src=\"" + item.goodsListImg + "\">\n\t\t\t\t\t\t\t<p>" + item.goodsName + "</p>\n\t\t\t\t\t\t\t<p><span>\uFFE5" + item.price + "</span><strong>\u67E5\u770B\u5546\u54C1\u8BE6\u60C5</strong></p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>";
+				strlist = item.className;
 			});
 			$(".shangpinzhanshi1").html(str);
+			$("#shang_list").html(strlist);
 		});
 	})();
 	//购物车变化
